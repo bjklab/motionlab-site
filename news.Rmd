@@ -1,0 +1,32 @@
+---
+title: "News"
+output:
+  distill::distill_article:
+    self_contained: false
+    anchor_sections: FALSE
+    css: [theme_inferno_black.css, background_grad.css]
+site: distill::distill_website
+favicon: p_M4T_url_mini_inferno.png
+listing: posts
+---
+
+```{css, echo=FALSE, eval=TRUE}
+d-title {
+    display: none;
+  }
+```
+
+```{r, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, fig.align='center', out.width='90%', fig.retina=2}
+
+knitr::opts_chunk$set(echo = FALSE)
+
+```
+ 
+
+ <br>
+
+ <br>
+
+ <br>
+ 
+

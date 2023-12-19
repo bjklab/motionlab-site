@@ -1,0 +1,26 @@
+---
+#title: "Welcome to the M4T Lab!"
+image: "anim_microbiome_logo_inferno_left_more_space_trans.gif"
+color1: "#FFFFFF" #"#808080" #"#d3d3d3"
+color2: "#240C4F"
+angle: 116
+# links:
+#   - label: PubMed
+#     url: "https://www.ncbi.nlm.nih.gov/myncbi/12Ouj3rJSdIka/bibliography/public/"
+#   - label: Scholar
+#     url: "https://scholar.google.com/citations?user=6s0BAn0AAAAJ&hl=en"  
+#   - label: GitHub
+#     url: "https://github.com/bjklab"
+#   - label: Twitter
+#     url: "https://twitter.com/bjk_lab"
+favicon: p_M4T_url_mini_inferno.png
+site: distill::distill_website
+output:
+  postcards::onofre
+---
+  
+Welcome to the M4T Lab! We study human and environmental microbiomes to better understand microbial transmission. Our primary focus is on the transmission of antibiotic-resistant bacteria, and we serve as a core lab for the University of Pennsylvania's Center for the Study of Antibiotic Resistance (C-STAR). A second focus is understanding the mechanism -- and improving the efficacy -- of microbial therapeutics like fecal microbiota transplant (FMT) and live biotherapeutic products (LBPs), which depend on microbial transfer for success. To characterize microbial communities, we use a wide range of measurement strategies, including amplicon, metagenomic, and whole-genome sequencing, as well as culturomics. We have developed novel Bayesian modeling approaches to trace microbes as they move between human hosts, the environment, and even other host species. During the COVID-19 pandemic, we developed similar approaches to understand SARS-CoV-2 transmission dynamics.  
+  
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```

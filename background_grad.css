@@ -1,0 +1,7 @@
+/* add background gradient */
+/* base variables */
+
+body {
+      bkgd-color: white;
+      background-image: linear-gradient(16deg, #240C4F, #240C4F, #932667, white, white, white, white, white, white, white, white, white, white, white);
+}

@@ -1,0 +1,28 @@
+---
+title: "Resources"
+output:
+  distill::distill_article:
+    self_contained: false
+    anchor_sections: FALSE
+    css: [theme_inferno_black.css, background_grad.css]
+site: distill::distill_website
+favicon: p_M4T_url_mini_inferno.png
+---
+
+```{r, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE}
+
+knitr::opts_chunk$set(echo = FALSE)
+
+```
+  
+### Protocols
+
+
+
+ <br>
+
+ <br>
+
+ <br>
+
+  
