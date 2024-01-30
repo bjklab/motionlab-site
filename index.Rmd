@@ -19,7 +19,7 @@ d-title {
 ```{r, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, fig.align='center', out.width='90%', fig.retina=2}
 
 knitr::opts_chunk$set(echo = FALSE)
-knitr::include_graphics(path = "p_logo_microbiome_transmission_lab.png")
+knitr::include_graphics(path = "anim_motionlab_logo_mako.gif")
 
 ```
   
