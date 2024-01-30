@@ -1,5 +1,5 @@
 ---
-title: "MOTION Lab Meeting Schedule"
+title: "Lab Meeting Schedule"
 site: distill::distill_website
 favicon: microscope_white.png
 ---
