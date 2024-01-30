@@ -1,0 +1,34 @@
+---
+title: "Project Dashboards"
+output:
+  distill::distill_article:
+    self_contained: false
+    anchor_sections: FALSE
+    css: [theme_inferno_black.css, background_grad.css]
+site: distill::distill_website
+favicon: microscope_white.png
+---
+
+```{r, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, fig.align='center', out.width='90%', fig.retina=2}
+
+knitr::opts_chunk$set(echo = FALSE)
+
+```
+
+
+### mVACS: mRNA Vaccines for _C. difficile_ Suppression - Human Subjects Core (U19 AI174998 - Core C)    
+  
+<a href="biorepo_reports/biorepository_report_mVACS.html" target="_blank">mVACS Dashboard</a>  
+  
+### Fecal microbiota transplantation to address colonization and environmental contamination with multidrug-resistant organisms (FACE-MDRO) (CDC U54-CK000610)    
+  
+FACE-MDRO Dashboard  
+
+
+
+ <br>
+
+ <br>
+
+ <br>
+ 

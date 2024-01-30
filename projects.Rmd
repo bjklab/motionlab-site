@@ -1,5 +1,5 @@
 ---
-title: "Projects"
+title: "Project Descriptions"
 output:
   distill::distill_article:
     self_contained: false
@@ -16,6 +16,11 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
+### mVACS: mRNA Vaccines for _C. difficile_ Suppression - Human Subjects Core (U19 AI174998 - Core C)    
+  
+We are contributing to a collaborative center with multidisciplinary scientists working to develop mRNA vaccine candidates to address the threat posed by recurrent _C. difficile_ infection. The human subjects core is focused on developing a clinical biorepository and prospective cohort to identify populations in whom vaccination strategies against _C. difficile_ will be most beneficial. Biorepository progress report <a href="biorepo_reports/biorepository_report_mVACS.html" target="_blank">here</a>.   
+  
+  
 ### Fecal microbiota transplantation to address colonization and environmental contamination with multidrug-resistant organisms (FACE-MDRO) (CDC U54-CK000610)    
   
 We will perform fecal microbiota transplantation (FMT) at the conclusion of antibiotic therapy for MDRO infections to define the impact of FMT on eradicating MDRO colonization from the gastrointestinal tract. We will also determine how FMT administration impacts MDRO colonization in the healthcare environment.   
@@ -50,7 +55,7 @@ A phase II, randomized trial to evaluate the safety and efficacy of fecal microb
 ### Longitudinal analysis of respiratory tract microbiome change and sequence-based infection diagnosis during mechanical ventilation (K23 AI121485)
   
 Bacterial pneumonia is a common and dangerous contributor to critical illness, during which patients depend on mechanical ventilators to assist their breathing. It may contribute to the initial need for mechanical ventilation, or it may complicate the course of mechanical ventilation. We are using deep sequencing methods to completely characterize the bacterial community of the respiratory tract over the full course of mechanical ventilation, thus improving understanding of how bacterial pneumonia occurs in critically ill patients, with implications for prevention, diagnosis, and treatment interventions.   
-  
+    
   
   
  <br>

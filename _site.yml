@@ -6,7 +6,7 @@ description: |
 output_dir: "docs"
 base_url: https://bjklab.github.io/motionlab-site/index.html
 favicon: microscope_white.png
-google_analytics: "G-Y873601SDX"
+google_analytics: "G-VSFKQ6K4MK"
 navbar:
   # logo:
   #   image: p_M4T_url_mini_inferno.png
@@ -17,14 +17,24 @@ navbar:
     #   href: index.html
     - text: "People"
       menu:
-        - text: "MOTION Lab Team"
+        - text: "Our Team"
           href: motion_team.html
-        - text: "Collaborators"
+        - text: "Our Collaborators"
           href: collabs.html
     - text: "Projects"
-      href: projects.html
+      menu: 
+        - text: "Descriptions"
+          href: projects.html
+        - text: "Dashboards"
+          href: dashboards.html
     - text: "Resources"
-      href: resources.html
+      menu: 
+        - text: "Meeting Schedule"
+          href: lab_schedule.html
+        - text: "Agenda Items"
+          href: discussion_topics.html
+        - text: "Protocols"
+          href: resources.html
     - text: "Publications"
       href: publications.html
     # - text: "News"
