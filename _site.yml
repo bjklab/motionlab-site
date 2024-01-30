@@ -4,7 +4,7 @@ description: |
   microbiome transmission lab website
 #output_dir: "_site"
 output_dir: "docs"
-base_url: https://bjklab.github.io/M4T-bio/index.html
+base_url: https://bjklab.github.io/motionlab-site/index.html
 favicon: microscope_white.png
 google_analytics: "G-Y873601SDX"
 navbar:
