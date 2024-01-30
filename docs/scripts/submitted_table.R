@@ -1,0 +1,47 @@
+#' #################################
+#' load libraries and set seed
+#' #################################
+library(tidyverse)
+library(gt)
+
+#' add gt formatting functions
+source("./scripts/gt_themes.R")
+
+
+#' #################################
+#'  read and format citation data
+#' #################################
+
+read_csv(file = "./bib/bjk_submitted.csv") %>%
+  select(Category) %>%
+  distinct() %>%
+  separate(col = Category, into = paste0("contribution_", seq(6)), sep = "; ", extra = "drop") %>%
+  pivot_longer(cols = everything()) %>%
+  select(value) %>%
+  filter(!is.na(value)) %>%
+  distinct() %>%
+  arrange(value) %>%
+  mutate(contrib_color = viridis::plasma(nrow(.),begin = 0, end = 0.9)) %>%
+  mutate(contrib_label = glue::glue("<span style='color:{contrib_color}'>{value}</span>")) %>%
+  identity() -> contrib_tib
+contrib_tib
+
+contrib_tib %>% gt() %>% fmt_markdown(columns = "contrib_label")
+
+
+read_csv(file = "./bib/bjk_submitted.csv") %>%
+  select(-contributions) %>%
+  mutate(Authors = stringr::str_replace_all(string = Authors, pattern = "1\\,|2\\,|3\\,|4\\,|5\\,|6\\,|7\\,|8\\,|9\\,|10\\,|1|2|3|4|5|6|7|8|9|10|\\(|\\)", replacement = "")) %>%
+  mutate(Authors = stringr::str_replace_all(string = Authors, pattern = " ;", replacement = ";")) %>%
+  mutate(Category = stringr::str_replace(string = Category, pattern = contrib_tib$value[1], replacement = contrib_tib$contrib_label[1])) %>%
+  mutate(Category = stringr::str_replace(string = Category, pattern = contrib_tib$value[2], replacement = contrib_tib$contrib_label[2])) %>%
+  mutate(Category = stringr::str_replace(string = Category, pattern = contrib_tib$value[3], replacement = contrib_tib$contrib_label[3])) %>%
+  mutate(Category = stringr::str_replace(string = Category, pattern = contrib_tib$value[4], replacement = contrib_tib$contrib_label[4])) %>%
+  mutate(Category = stringr::str_replace(string = Category, pattern = contrib_tib$value[5], replacement = contrib_tib$contrib_label[5])) %>%
+  # mutate(Category = stringr::str_replace(string = Category, pattern = contrib_tib$value[6], replacement = contrib_tib$contrib_label[6])) %>%
+  gt() %>%
+  fmt_markdown(columns = "Category") %>%
+  gt_black_grey()
+
+
+
