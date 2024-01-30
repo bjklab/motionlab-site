@@ -6,7 +6,7 @@ output:
     anchor_sections: FALSE
     css: [theme_inferno_black.css, background_grad.css]
 site: distill::distill_website
-favicon: p_M4T_url_mini_inferno.png
+favicon: microscope_white.png
 listing: posts
 ---
 
