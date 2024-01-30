@@ -1,7 +1,7 @@
-name: "M4T Lab"
-title: "M4T Lab"
+name: "motion lab"
+title: "motion lab"
 description: |
-  M4T lab website
+  microbiome transmission lab website
 #output_dir: "_site"
 output_dir: "docs"
 base_url: https://bjklab.github.io/M4T-bio/index.html
@@ -17,7 +17,7 @@ navbar:
     #   href: index.html
     - text: "People"
       menu:
-        - text: "M4T Team"
+        - text: "MOTION Lab Team"
           href: m4t_team.html
         - text: "Collaborators"
           href: collabs.html
