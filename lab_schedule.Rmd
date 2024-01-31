@@ -4,7 +4,10 @@ site: distill::distill_website
 favicon: microscope_white.png
 ---
 
-```{r, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, layout="l-body-outset", fig.width=6}
+
+### Upcoming Meetings  
+  
+```{r upcoming_meetings, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, layout="l-body-outset", fig.width=6}
 
 #' #################################
 #' load libraries and set seed
@@ -13,12 +16,9 @@ library(tidyverse)
 library(gt)
 library(gtExtras)
 
-#' add gt formatting functions
-#source("./scripts/gt_themes.R")
-
 
 #' #################################
-#'  read and format citation data
+#'  read and format meeting data
 #' #################################
 
 read_csv(file = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQzKebqOHpuFtCtut0gSbyG4EtOPb7uaktDXLFuEQRxMxO0sxjHMz-UftlWGthILmmMUmmgovITXuL_/pub?gid=0&single=true&output=csv") %>%
@@ -29,6 +29,8 @@ motion_lab_schedule |>
   write_csv("discussion_topics/motion_lab_schedule.csv")
 
 motion_lab_schedule |> 
+  filter(Date >= Sys.Date()) |> 
+  arrange(desc(Date)) |> 
   gt() |> 
   gt::sub_missing() |> 
   gtExtras::gt_theme_nytimes() |> 
@@ -45,4 +47,33 @@ motion_lab_schedule |>
 
 
 ```
+  
+<br>    
+  
+### Past Meetings  
+  
+```{r past_meetings, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, layout="l-body-outset", fig.width=6}
 
+#' #################################
+#'  read and format meeting data
+#' #################################
+
+motion_lab_schedule |> 
+  filter(Date <= Sys.Date()) |> 
+  arrange(desc(Date)) |> 
+  gt() |> 
+  gt::sub_missing() |> 
+  gtExtras::gt_theme_nytimes() |> 
+  gtExtras::gt_highlight_rows(rows = Focus == "ASPIRE-MOTION Joint Meeting", fill = "lightgrey", target_col = "Focus", font_weight = "normal")
+#   gt_color_rows(
+#     Focus, 
+#     palette = "viridis::turbo", 
+#     domain = as.factor(motion_lab_schedule$Focus),
+#     pal_type = "discrete"
+#    )
+
+
+
+
+
+```
