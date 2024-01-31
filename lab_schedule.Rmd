@@ -30,7 +30,7 @@ motion_lab_schedule |>
 
 motion_lab_schedule |> 
   filter(Date >= Sys.Date()) |> 
-  arrange(desc(Date)) |> 
+  arrange(Date) |> 
   gt() |> 
   gt::sub_missing() |> 
   gtExtras::gt_theme_nytimes() |> 
