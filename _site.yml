@@ -33,9 +33,18 @@ navbar:
           href: lab_schedule.html
         - text: "Agenda Items"
           href: discussion_topics.html
-        - text: "Protocols"
-          href: resources.html
-    - text: "Publications"
+        - text: "Protocol Library"
+          href: protocols.html
+        - text: "Code Library"
+          href: codelibrary.html
+        - text: "Bio-Repositories"
+          href: biorepos.html
+    - text: "Papers"
+      menu: 
+        - text: "Publications"
+          href: publications.html
+        - text: "Pre-Prints"
+          href: preprints.html
       href: publications.html
     # - text: "News"
     #   href: news.html
