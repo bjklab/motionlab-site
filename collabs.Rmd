@@ -9,7 +9,7 @@ site: distill::distill_website
 favicon: p_M4T_url_mini_inferno.png
 ---
 
-### Collaborators  
+### Collaborations    
 
  <br>
 

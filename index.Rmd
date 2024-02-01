@@ -29,9 +29,6 @@ We train students in molecular epidemiology and microbial ecology methods, inclu
   
 We serve as the core laboratory for the University of Pennsylvania's Center for the Study of Antibiotic Resistance ([C-STAR](https://cstar.med.upenn.edu/)). During the COVID-19 pandemic, we applied our expertise in molecular epidemiology of infectious diseaeses to lead regional genomic SARS-CoV-2 surveillance, and we developed modeling approaches to understand SARS-CoV-2 transmission dynamics and the population impact of vaccination across the Philadelphia region.  
   
-<br>  
-  
-<br>  
    
 ## Lab News  
    
