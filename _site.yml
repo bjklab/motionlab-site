@@ -41,6 +41,8 @@ navbar:
           href: codelibrary.html
         - text: "Bio-Repositories"
           href: biorepos.html
+        - text: "Training"
+          href: training.html
     - text: "Papers"
       menu: 
         - text: "Publications"
