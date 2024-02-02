@@ -50,8 +50,8 @@ navbar:
       href: publications.html
     # - text: "News"
     #   href: news.html
-    - icon: fa fa-rss
-      href: news.xml
+    # - icon: fa fa-rss
+    #   href: news.xml
     # - icon: fab fa-twitter
     #  href: https://twitter.com/bjk_lab
     # - icon: fab fa-orcid
