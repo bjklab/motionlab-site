@@ -59,7 +59,7 @@ navbar:
     - icon: fab fa-google #fa-spin
       href: https://scholar.google.com/citations?user=6s0BAn0AAAAJ&hl=en
     - icon: fab fa-github
-      href: https://github.com/bjklab
+      href: https://github.com/microbiome-transmission-lab
 collections:
   posts:
     categories: true
