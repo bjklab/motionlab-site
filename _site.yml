@@ -27,6 +27,8 @@ navbar:
           href: projects.html
         - text: "Dashboards"
           href: dashboards.html
+        - text: "Tasks"
+          href: project_tasks.html
     - text: "Resources"
       menu: 
         - text: "Meeting Schedule"

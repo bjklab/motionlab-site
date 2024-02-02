@@ -19,7 +19,6 @@ motion_pubs <- tibble(pub_ids = motion_search$ids) |>
 
 entrez_categories <- c('uid','pubdate','epubdate','source','authors','lastauthor','title','sorttitle','volume','issue','pages','lang','nlmuniqueid','issn','essn','pubtype','recordstatus','pubstatus','articleids','history','references','attributes','pmcrefcount','fulljournalname','elocationid','doctype','srccontriblist','booktitle','medium','edition','publisherlocation','publishername','srcdate','reportnumber','availablefromurl','locationlabel','doccontriblist','docdate','bookname','chapter','sortpubdate','sortfirstauthor','vernaculartitle')
 
-motion_pubs$entrez[[1]] |> extract_from_esummary(esummaries = _, elements = entrez_categories) |> bind_cols()
 
 tibble(entrez_names = entrez_categories) |> 
   mutate(entrez_dat  = map(.x = motion_pubs$entrez, .f = ~ list(rentrez::extract_from_esummary(.x, entrez_names))))

@@ -1,0 +1,29 @@
+---
+title: "Project Tasks"
+output:
+  distill::distill_article:
+    self_contained: false
+    anchor_sections: FALSE
+    css: [theme_inferno_black.css, background_grad.css]
+site: distill::distill_website
+favicon: microscope_white.png
+---
+
+```{r, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE}
+
+knitr::opts_chunk$set(echo = FALSE)
+
+```
+  
+### mVACS: mRNA Vaccines for _C. difficile_ Suppression - Human Subjects Core (U19 AI174998 - Core C)    
+  
+<iframe src="https://view.monday.com/embed/5242317624-5462aeda851f9db0466e9570dc18f258?r=use1" width=770 height=500 style="border: 0; box-shadow: 5px 5px 56px 0px rgba(0,0,0,0.25);"></iframe>  
+  
+
+ <br>
+
+ <br>
+
+ <br>
+
+  
