@@ -1,5 +1,5 @@
 ---
-title: "C-STAR Biorepositories"
+title: "Lab Onboarding"
 output:
   distill::distill_article:
     self_contained: false
@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```
   
-### C-STAR  
+### Getting Started in the Lab    
 
 
 

@@ -4,7 +4,8 @@ site: distill::distill_website
 favicon: microscope_white.png
 ---
 
-
+Meetings are held at 4pm on Tuesdays, in Johnson Pavilion 501.  
+  
 ### Upcoming Meetings  
   
 ```{r upcoming_meetings, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, layout="l-body-outset", fig.width=6}

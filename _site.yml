@@ -43,6 +43,12 @@ navbar:
           href: biorepos.html
         - text: "University Training"
           href: training.html
+        - text: "Lab Onboarding"
+          href: onboarding.html
+        - text: "Orders & Inventory"
+          href: orders_and_inventory.html
+        - text: "Lab Facilities"
+          href: facilities.html
     - text: "Papers"
       menu: 
         - text: "Publications"
