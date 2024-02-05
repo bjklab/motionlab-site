@@ -57,7 +57,7 @@ REDCap: Best Practices for Maintaining HIPAA Compliance and Protecting Personal 
 - Requesting Access After Completion of Training
 
 If you have any questions at all, please reach out directly to psom-ocrops@pobox.upenn.edu or lauraee@upenn.edu 
-
+</details>
 
 
 <details>
