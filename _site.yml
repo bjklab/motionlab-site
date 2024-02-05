@@ -33,15 +33,15 @@ navbar:
       menu: 
         - text: "Meeting Schedule"
           href: lab_schedule.html
-        - text: "Agenda Items"
+        - text: "Meeting Agenda"
           href: discussion_topics.html
         - text: "Protocol Library"
           href: protocols.html
         - text: "Code Library"
           href: codelibrary.html
-        - text: "Bio-Repositories"
+        - text: "C-STAR Biorepositories"
           href: biorepos.html
-        - text: "Training"
+        - text: "University Training"
           href: training.html
     - text: "Papers"
       menu: 
