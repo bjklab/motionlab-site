@@ -1,5 +1,10 @@
 ---
 title: "Lab Meeting Discussion Topics"
+output:
+  distill::distill_article:
+    self_contained: false
+    anchor_sections: FALSE
+    css: [theme_inferno_black.css, background_grad.css]
 site: distill::distill_website
 favicon: microscope_white.png
 ---
@@ -41,3 +46,10 @@ discussion_topics_tib |>
 
 ```
 
+<br>
+
+<br>
+
+<br>
+
+<br>
