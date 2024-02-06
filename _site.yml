@@ -47,7 +47,7 @@ navbar:
           href: onboarding.html
         - text: "Orders & Inventory"
           href: orders_and_inventory.html
-        - text: "Lab Facilities"
+        - text: "Facilities & Equipment"
           href: facilities.html
         - text: "LIMS Link"
           href: https://lims.pmacs.upenn.edu/limsprod
