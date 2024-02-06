@@ -38,7 +38,7 @@ navbar:
         - text: "Protocol Library"
           href: protocols.html
         - text: "Code Library"
-          href: codelibrary.html
+          href: https://github.com/microbiome-transmission-lab
         - text: "C-STAR Biorepositories"
           href: biorepos.html
         - text: "University Training"
