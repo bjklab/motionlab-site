@@ -36,7 +36,8 @@ discussion_topics_tib |>
 discussion_topics_tib |> 
   gt() |> 
   gt::sub_missing() |> 
-  gtExtras::gt_highlight_rows(rows = Priority == "now") |> 
+  gtExtras::gt_highlight_rows(rows = Priority == "now",
+                              fill = "#60CEAC") |> 
   gt::cols_hide(Priority) |> 
   gtExtras::gt_theme_nytimes()
 
