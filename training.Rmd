@@ -18,7 +18,7 @@ knitr::opts_chunk$set(echo = FALSE)
 [Knowledge Link](https://knowledgelink.upenn.edu/) is the source of all general Penn training information. Research coordinators should take CITI Training and REDCap for data analysis. Those looking to take Ben Buys training for creating POs and working with vendors can do so through knowledge link. SAP Concur training is available for those looking to plan travel.  
 
 <details>
-<summary> **Knowledge Link** </summary>   
+<summary style='font-size:1.2rem'> **Knowledge Link** </summary>   
 [Knowledge Link](https://knowledgelink.upenn.edu/) is the source of all general Penn training information. Please note not all trainings are necessary for every employee. Annual Penn Profiler assessment will determine your training needs. Speak to your supervisor if you are unsure about any training. HR will also discuss training information and send you automatic updates of required trainings. Some of the Penn-required trainings for new employees:
 
 - Welcome to the Perelman School of Medicine!  
@@ -39,7 +39,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 
 <details>
-<summary> **CITI Training** </summary> 
+<summary style='font-size:1.2rem'> **CITI Training** </summary> 
 If you are interested in taking the CITI courses, follow the steps on the pdf  linked here to set up training for the first time. Assigning CITI Training (PDF). As you register in the CITI website, the appropriate responses should be: 1) select “Protection of Human Subjects”; 2. say no to the CHOP questions: 3) select “Group 1: Biomedical Research”.  Finally, for GCP, you can say “yes” or “no”.  If you want training beyond the initial, you can take GCP either through CITI or through Penn (they have their our course in Knowledgelink). GCP is required for research coordinators. 
 
 - [UPENN IRB website](https://irb.upenn.edu/) 
@@ -48,7 +48,7 @@ If you are interested in taking the CITI courses, follow the steps on the pdf  l
 
 
 <details>
-<summary> **REDCap** </summary> 
+<summary style='font-size:1.2rem'> **REDCap** </summary> 
 OCR hosts several REDCap training courses which can be found on Knowledge Link. After logging in (using your PennKey and password), search “REDCap” in the “Find Learning” dashboard. Additional trainings (both instructor-led and eLearning) will be added soon. 
 
 REDCap: Best Practices for Maintaining HIPAA Compliance and Protecting Personal Health Information (PHI)” This training is now required for new users at the time of account creation, and for existing users before close of business July 5th 2022. The training takes only 5-10 minutes to complete and covers practical ways to make sure any PHI entered into the tool is secure, access is limited, and inappropriate exporting is prevented.
@@ -61,7 +61,7 @@ If you have any questions at all, please reach out directly to psom-ocrops@pob
 
 
 <details>
-<summary> **PennChart** </summary>  
+<summary style='font-size:1.2rem'> **PennChart** </summary>  
 - About PennChart
 - PennChart Training
 - PennChart training managed by UPHS 
@@ -80,12 +80,12 @@ This RC access allows for RCs to create notes in PennChart – if you have a cli
 
 
 <details>
-<summary> **SAP Concur & TEM Booking** </summary>  
+<summary style='font-size:1.2rem'> **SAP Concur & TEM Booking** </summary>  
 Used to reimburse travel or event expenses and book travel. Instructor-led demonstration and discussion on Travel & Expense Management at Penn.  Demonstration will include Travel Booking as well as creating and submitting an Expense Report.  Discussion topics will include but are not limited to policy, procedure, and practice for travel booking and expense reimbursement for faculty, staff, and students. [Link to knowledge link training]() 
 </details>
 
 <details>
-<summary> **BenBuys** </summary>  
+<summary style='font-size:1.2rem'> **BenBuys** </summary>  
 BenBuys training hould be taken for any employee looking to order supplies for office or lab. Link to Knowledge Link Training Sign Up 
 
 - Ben Buys Requisitioner Training - Purchasing System
