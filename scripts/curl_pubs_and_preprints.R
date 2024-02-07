@@ -1,40 +1,42 @@
----
-title: "Pre-Prints"
-output:
-  distill::distill_article:
-    self_contained: false
-    anchor_sections: FALSE
-    css: [theme_inferno_black.css, background_grad.css]
-site: distill::distill_website
-favicon: microscope_white.png
----
-
-```{r, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, fig.align='center', out.width='90%', fig.retina=2}
-
-knitr::opts_chunk$set(echo = FALSE)
-
-```
-
-```{r preprints, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, layout="l-body-outset", fig.width=6}
-
-#' #################################
+#' #####################################
 #' load libraries and set seed
-#' #################################
+#' #####################################
 library(tidyverse)
 library(gt)
 library(gtExtras)
 
+set.seed(16)
+
 
 #' #####################################
-#' read DOIs with bibtex
+#' curl DOIs to bibtex
 #' #####################################
+read_lines("pubs/doi.txt") |> 
+  enframe(value = "doi") |> 
+  select(doi) |> 
+  mutate(url = paste0("https://doi.org/", doi)) |> 
+  mutate(curl_query = paste0("curl -LH 'Accept: application/x-bibtex' ", url)) |> 
+  mutate(bib = map(.x = curl_query, .f = ~ system(.x, intern = TRUE))) |> 
+  identity() -> doi_tib
+doi_tib
 
-doi_tib <- read_rds("pubs/doi.rds")
+doi_tib$bib[[2]]
+
+doi_tib |> 
+  filter(grepl("not found", tolower(bib)) == FALSE) |>   
+  pull(bib) |> 
+  paste0(collapse = "\n \n") |> 
+  write_lines(file = "pubs/doi.bib")
+
+doi_tib |> 
+  write_rds("pubs/doi.rds")
 
 
 #' #####################################
 #' put bibtex in tabular form & join with links
 #' #####################################
+
+doi_tib$bib[[2]]
 
 doi_tib |> 
   # filter out missing bibtex
@@ -54,30 +56,8 @@ doi_tib |>
   mutate(DOI = map(.x = DOI, .f = ~ htmltools::a(href = paste0("https://doi.org/", .x), .x)),
         DOI = map(.x = DOI, .f = ~ gt::html(as.character(.x)))) |> 
   identity() -> bib_tib
+bib_tib
 
-bib_tib |> 
-  # focus on preprints
-  filter(Journal == "preprint") |> 
-  # check order
-  arrange(desc(Year), Authors) |> 
-  select(Year, Authors, Journal, DOI) |> 
-  gt() |> 
-  gt::sub_missing() |> 
-  gtExtras::gt_theme_nytimes()
-
-
-```
-
-
-
-
-
- <br>
-
- <br>
-
- <br>
- 
-  
-  
-
+# bib_tib |> 
+#   select(Year, Authors, Journal, DOI) |> 
+#   gt()

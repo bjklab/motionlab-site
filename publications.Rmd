@@ -4,7 +4,7 @@ output:
   distill::distill_article:
     self_contained: false
     anchor_sections: FALSE
-    css: [theme_inferno_black.css, background_grad.css]
+    css: [theme_inferno_black.css]
 site: distill::distill_website
 favicon: microscope_white.png
 ---
@@ -15,7 +15,77 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```
 
-### Publications
+```{r publications, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, layout="l-body-outset", fig.width=6}
+
+#' #################################
+#' load libraries and set seed
+#' #################################
+library(tidyverse)
+library(gt)
+library(gtExtras)
+
+
+#' #####################################
+#' curl DOIs to bibtex
+#' #####################################
+read_lines("pubs/doi.txt") |> 
+  enframe(value = "doi") |> 
+  select(doi) |> 
+  mutate(url = paste0("https://doi.org/", doi)) |> 
+  mutate(curl_query = paste0("curl -LH 'Accept: application/x-bibtex' ", url)) |> 
+  mutate(bib = map(.x = curl_query, .f = ~ system(.x, intern = TRUE))) |> 
+  identity() -> doi_tib
+doi_tib
+
+doi_tib |> 
+  filter(grepl("not found", tolower(bib)) == FALSE) |>   
+  pull(bib) |> 
+  paste0(collapse = "\n \n") |> 
+  write_lines(file = "pubs/doi.bib")
+
+doi_tib |> 
+  write_rds("pubs/doi.rds")
+
+
+#' #####################################
+#' put bibtex in tabular form & join with links
+#' #####################################
+
+doi_tib |> 
+  # filter out missing bibtex
+  filter(grepl("not found", tolower(bib)) == FALSE) |>   
+  # format data for presentation
+  mutate(year = stringr::str_match(string = bib, pattern = "year\\=\\{\\s*(.*?)\\s*\\}")[,2]) |> 
+  mutate(authors = stringr::str_match(string = bib, pattern = "author\\=\\{\\s*(.*?)\\s*\\}")[,2]) |> 
+  mutate(journal = stringr::str_match(string = bib, pattern = "journal\\=\\{\\s*(.*?)\\s*\\}")[,2]) |> 
+  mutate(journal = replace(journal, is.na(journal), "preprint")) |> 
+  mutate(publisher = stringr::str_match(string = bib, pattern = "publisher\\=\\{\\s*(.*?)\\s*\\}")[,2]) |> 
+  mutate(url = stringr::str_match(string = bib, pattern = "year\\=\\{\\s*(.*?)\\s*\\}")[,2]) |> 
+  mutate(journal = gsub("&amp;", "&", journal)) |> 
+  arrange(desc(year), authors) |> 
+  rename_all(.funs = ~ stringr::str_to_title(.x)) |> 
+  rename("DOI" = "Doi") |> 
+  # add html links
+  mutate(DOI = map(.x = DOI, .f = ~ htmltools::a(href = paste0("https://doi.org/", .x), .x)),
+        DOI = map(.x = DOI, .f = ~ gt::html(as.character(.x)))) |> 
+  identity() -> bib_tib
+
+bib_tib |> 
+  # remove preprints
+  filter(Journal != "preprint") |> 
+  # check order
+  arrange(desc(Year), Authors) |> 
+  select(Year, Authors, Journal, DOI) |> 
+  gt() |> 
+  gt::sub_missing() |> 
+  gtExtras::gt_theme_nytimes()
+
+
+```
+
+
+
+
 
  <br>
 
