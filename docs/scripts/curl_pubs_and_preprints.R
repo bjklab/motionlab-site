@@ -44,12 +44,13 @@ doi_tib |>
   # format data for presentation
   mutate(year = stringr::str_match(string = bib, pattern = "year\\=\\{\\s*(.*?)\\s*\\}")[,2]) |> 
   mutate(authors = stringr::str_match(string = bib, pattern = "author\\=\\{\\s*(.*?)\\s*\\}")[,2]) |> 
+  mutate(title = stringr::str_match(string = bib, pattern = "title\\=\\{\\s*(.*?)\\s*\\}")[,2]) |> 
   mutate(journal = stringr::str_match(string = bib, pattern = "journal\\=\\{\\s*(.*?)\\s*\\}")[,2]) |> 
   mutate(journal = replace(journal, is.na(journal), "preprint")) |> 
   mutate(publisher = stringr::str_match(string = bib, pattern = "publisher\\=\\{\\s*(.*?)\\s*\\}")[,2]) |> 
   mutate(url = stringr::str_match(string = bib, pattern = "year\\=\\{\\s*(.*?)\\s*\\}")[,2]) |> 
   mutate(journal = gsub("&amp;", "&", journal)) |> 
-  arrange(desc(year), authors) |> 
+  arrange(desc(year), title) |> 
   rename_all(.funs = ~ stringr::str_to_title(.x)) |> 
   rename("DOI" = "Doi") |> 
   # add html links
@@ -59,5 +60,5 @@ doi_tib |>
 bib_tib
 
 # bib_tib |> 
-#   select(Year, Authors, Journal, DOI) |> 
+#   select(Year, Authors, Title, Journal, DOI) |> 
 #   gt()
