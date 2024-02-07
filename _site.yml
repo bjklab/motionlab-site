@@ -19,26 +19,26 @@ navbar:
       href: motion_team.html
     - text: "Resources"
       menu: 
-        - text: "Meeting Schedule"
-          href: lab_schedule.html
-        - text: "Meeting Agenda"
-          href: discussion_topics.html
-        - text: "Protocol Library"
-          href: protocols.html
         - text: "Code Library ↗️"
           href: https://github.com/orgs/microbiome-transmission-lab/repositories
         - text: "C-STAR Biorepository"
-          href: biorepos.html
-        - text: "University Training"
-          href: training.html
-        - text: "Lab Onboarding"
-          href: onboarding.html
-        - text: "Orders & Inventory"
-          href: orders_and_inventory.html
+          href: cstar.html
         - text: "Facilities & Equipment"
           href: facilities.html
+        - text: "Lab Onboarding"
+          href: onboarding.html
         - text: "LIMS Link ↗️"
           href: https://lims.pmacs.upenn.edu/limsprod
+        - text: "Meeting Agenda"
+          href: discussion_topics.html
+        - text: "Meeting Schedule"
+          href: lab_schedule.html
+        - text: "Orders & Inventory"
+          href: orders_and_inventory.html
+        - text: "Protocol Library"
+          href: protocols.html
+        - text: "University Training"
+          href: training.html
     - text: "Projects"
       menu: 
         - text: "Descriptions"
