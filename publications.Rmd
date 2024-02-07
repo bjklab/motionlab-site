@@ -78,7 +78,7 @@ bib_tib |>
   select(Year, Authors, Title, Journal, DOI) |> 
   gt() |> 
   gt::sub_missing() |> 
-  gtExtras::gt_theme_nytimes()
+  gtExtras::gt_theme_538()
 
 
 ```
