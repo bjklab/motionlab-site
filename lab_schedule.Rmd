@@ -34,7 +34,7 @@ motion_lab_schedule |>
   arrange(Date) |> 
   gt() |> 
   gt::sub_missing() |> 
-  gtExtras::gt_theme_nytimes() |> 
+  gtExtras::gt_theme_538() |> 
   gtExtras::gt_highlight_rows(rows = Focus == "ASPIRE-MOTION Joint Meeting", fill = "lightgrey", target_col = "Focus", font_weight = "normal")
 #   gt_color_rows(
 #     Focus, 
