@@ -25,9 +25,9 @@ navbar:
           href: discussion_topics.html
         - text: "Protocol Library"
           href: protocols.html
-        - text: "Code Library"
+        - text: "Code Library ↗️"
           href: https://github.com/orgs/microbiome-transmission-lab/repositories
-        - text: "C-STAR Biorepositories"
+        - text: "C-STAR Biorepository"
           href: biorepos.html
         - text: "University Training"
           href: training.html
@@ -37,7 +37,7 @@ navbar:
           href: orders_and_inventory.html
         - text: "Facilities & Equipment"
           href: facilities.html
-        - text: "LIMS Link"
+        - text: "LIMS Link ↗️"
           href: https://lims.pmacs.upenn.edu/limsprod
     - text: "Projects"
       menu: 
