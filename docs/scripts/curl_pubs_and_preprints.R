@@ -50,6 +50,7 @@ doi_tib |>
   mutate(publisher = stringr::str_match(string = bib, pattern = "publisher\\=\\{\\s*(.*?)\\s*\\}")[,2]) |> 
   mutate(url = stringr::str_match(string = bib, pattern = "year\\=\\{\\s*(.*?)\\s*\\}")[,2]) |> 
   mutate(journal = gsub("&amp;", "&", journal)) |> 
+  mutate(authors = gsub(" and", ";", authors)) |> 
   arrange(desc(year), title) |> 
   rename_all(.funs = ~ stringr::str_to_title(.x)) |> 
   rename("DOI" = "Doi") |> 
