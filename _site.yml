@@ -16,19 +16,7 @@ navbar:
     # - text: "About"
     #   href: index.html
     - text: "People"
-      menu:
-        - text: "Our Team"
-          href: motion_team.html
-        - text: "Our Collaborators"
-          href: collabs.html
-    - text: "Projects"
-      menu: 
-        - text: "Descriptions"
-          href: projects.html
-        - text: "Dashboards"
-          href: dashboards.html
-        - text: "Tasks"
-          href: project_tasks.html
+      href: motion_team.html
     - text: "Resources"
       menu: 
         - text: "Meeting Schedule"
@@ -51,6 +39,14 @@ navbar:
           href: facilities.html
         - text: "LIMS Link"
           href: https://lims.pmacs.upenn.edu/limsprod
+    - text: "Projects"
+      menu: 
+        - text: "Descriptions"
+          href: projects.html
+        - text: "Dashboards"
+          href: dashboards.html
+        - text: "Tasks"
+          href: project_tasks.html
     - text: "Papers"
       menu: 
         - text: "Publications"
