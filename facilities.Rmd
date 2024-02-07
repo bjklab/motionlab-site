@@ -67,8 +67,8 @@ read_csv("equipment/motion_equipment_dat.csv") |>
 equipment_dat |> 
   gt() |> 
   gt::sub_missing() |> 
-  gtExtras::gt_theme_nytimes() |> 
-  gt::tab_options(table.background.color = "#FFFFFF00")
+  gtExtras::gt_theme_538() #|> 
+  #gt::tab_options(table.background.color = "#FFFFFF00")
 
 
 ```
@@ -80,16 +80,5 @@ equipment_dat |>
 
  <br>
 
- <br>
-
- <br>
-
- <br>
-  
- <br>
-
- <br>
-
- <br>
-
-
+ 
+ 
