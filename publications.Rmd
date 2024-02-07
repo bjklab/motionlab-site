@@ -35,7 +35,6 @@ read_lines("pubs/doi.txt") |>
   mutate(curl_query = paste0("curl -LH 'Accept: application/x-bibtex' ", url)) |> 
   mutate(bib = map(.x = curl_query, .f = ~ system(.x, intern = TRUE))) |> 
   identity() -> doi_tib
-doi_tib
 
 doi_tib |> 
   filter(grepl("not found", tolower(bib)) == FALSE) |>   
