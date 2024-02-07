@@ -1,5 +1,5 @@
 ---
-title: "Facilities & Resources"
+title: "Facilities & Equipment"
 output:
   distill::distill_article:
     self_contained: false
@@ -80,5 +80,4 @@ equipment_dat |>
 
  <br>
 
- 
  
