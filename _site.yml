@@ -50,7 +50,7 @@ navbar:
     - text: "Papers"
       menu: 
         - text: "Publications"
-          href: publications.html
+          href: journal_publications.html
         - text: "Pre-Prints"
           href: preprints.html
       href: publications.html
