@@ -27,7 +27,7 @@ library(knitr)
 
 protocol_key <- read_csv("protocol_key.csv")
 
-list.files("docs/protocols", recursive = TRUE, full.names = FALSE) |> 
+list.files("protocols", recursive = TRUE, full.names = FALSE) |> 
   enframe() |> 
   select(clean_protocol_path = value) |>
   left_join(protocol_key, by = "clean_protocol_path") |> 
