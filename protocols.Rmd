@@ -27,17 +27,17 @@ library(knitr)
 
 protocol_key <- read_csv("protocol_key.csv")
 
-list.files("protocols", recursive = TRUE, full.names = FALSE) |> 
+list.files("docs/protocols", recursive = TRUE, full.names = FALSE) |> 
   enframe() |> 
   select(clean_protocol_path = value) |>
-  left_join(protocol_key, by = "clean_protocol_path") 
+  left_join(protocol_key, by = "clean_protocol_path") |> 
   select(Folder, Protocol, clean_protocol_path, clean_protocol_url) |> 
   mutate(Protocol = glue::glue("[{Protocol}]({clean_protocol_url})"),
          Protocol = map(Protocol, gt::md)) |>
-  select(Folder, Protocol) |> 
   identity() -> protocol_tab
 
 protocol_tab |> 
+  select(Folder, Protocol) |> 
   gt() |> 
   gt::fmt_markdown(Protocol) |> 
   gtExtras::gt_theme_538()
