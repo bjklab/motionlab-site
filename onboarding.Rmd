@@ -1,5 +1,5 @@
 ---
-title: "Lab Onboarding"
+title: "Getting Started in the Lab"
 output:
   distill::distill_article:
     self_contained: false
@@ -15,10 +15,39 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```
   
-### Getting Started in the Lab    
+### Checlist for New Lab Members      
+
+```{r onboarding_checklist, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, layout="l-body-outset", fig.width=6}
+
+#' #################################
+#' load libraries and set seed
+#' #################################
+library(tidyverse)
+library(gt)
+library(gtExtras)
+
+
+#' #################################
+#'  read and format meeting data
+#' #################################
+
+read_csv(file = "https://docs.google.com/spreadsheets/d/1AL72L7NQku5Y2iUGK84H0Y0NszRowPL_OmXjyzFaW4c/export?format=csv") %>%
+  identity() -> motion_onboarding
+#motion_onboarding
+
+motion_onboarding |> 
+  write_csv("equipment/motion_onboarding.csv")
+
+motion_onboarding |> 
+  gt() |> 
+  gt::sub_missing() |> 
+  gtExtras::gt_theme_538()
 
 
 
+
+```
+  
  <br>
 
  <br>
