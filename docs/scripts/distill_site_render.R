@@ -5,7 +5,7 @@ library(postcards)
 system("cd ~/motionlab-site; git pull")
 Sys.sleep(15)
 
-render_site()
+rmarkdown::render_site()
 
 Sys.sleep(15)
 system("cd ~/motionlab-site; git add *")
