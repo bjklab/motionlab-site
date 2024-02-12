@@ -61,7 +61,14 @@ motion_onboarding_md |>
     palette = viridis::mako(n = n_distinct(motion_onboarding$Step), alpha = 1),
     domain = NULL,
     reverse = TRUE
-  )
+  ) |> 
+  gt::cols_align(
+    align = "left",
+    columns = c(Task, Notes)) |> 
+  gt::cols_align(
+    align = "center",
+    columns = c(Step)) 
+  
 
 
 
