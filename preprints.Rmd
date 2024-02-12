@@ -65,7 +65,14 @@ bib_tib |>
   select(Year, Authors, Title, Journal, DOI) |> 
   gt() |> 
   gt::sub_missing() |> 
-  gtExtras::gt_theme_538()
+  gtExtras::gt_theme_538() |> 
+  gt::data_color(columns = Year,
+                 method = "factor",
+                 palette = viridis::mako(n = n_distinct(filter(bib_tib, Journal == "preprint")$Year), alpha = 1),
+                 domain = NULL,
+                 reverse = FALSE
+  )
+
 
 
 ```
