@@ -36,12 +36,33 @@ read_csv(file = "https://docs.google.com/spreadsheets/d/1AL72L7NQku5Y2iUGK84H0Y0
 #motion_onboarding
 
 motion_onboarding |> 
+  mutate(links = stringr::str_extract_all(string = Task, pattern = "(^|\\s)http(.*?)($|\\s)")) |> 
+  mutate(links = map(.x = links, .f = ~ stringr::str_trim(string = .x, side = "both"))) |>
+  mutate(links_count = map_dbl(links, length)) |>  
+  mutate(links_md = map(.x = links, .f = ~ paste0("[",.x,"](",.x,")"))) |>
+  rowwise() |> 
+  mutate(Task = ifelse(links_count == 0, Task, map_chr(.x = links, .y = links_md, .f = ~ stringr::str_replace_all(string = Task, pattern = .x, replacement = .y)))) |> 
+  ungroup() |> 
+  mutate(Task = map(Task, gt::md)) |> 
+  select(Step, Task, Notes) |> 
+  identity() -> motion_onboarding_md
+
+motion_onboarding_md |> 
   write_csv("equipment/motion_onboarding.csv")
 
-motion_onboarding |> 
+motion_onboarding_md |> 
   gt() |> 
   gt::sub_missing() |> 
-  gtExtras::gt_theme_538()
+  gt::fmt_markdown(Task) |> 
+  gtExtras::gt_theme_538() |> 
+  gt::data_color(
+    columns = Step,
+    method = "numeric",
+    palette = viridis::mako(n = n_distinct(motion_onboarding$Step), alpha = 1),
+    domain = NULL,
+    reverse = TRUE
+  )
+
 
 
 
