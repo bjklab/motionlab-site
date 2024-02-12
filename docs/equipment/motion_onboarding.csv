@@ -1,13 +1,10 @@
-Task,Notes
-"Obtain your ID from the PennCard Center, located at the bookstore. To do this, you will need to schedule an appointment: Make an Appointment | PennCard (upenn.edu)
- Please make sure to bring:
- · A valid photo ID (driver’s license/state or military-issued ID)
- · OR a valid passport",Requires paperwork prepared by manager.
-Obtain your PennKey. Ensure that your assigned PennKey works: Test My PennKey (upenn.edu),NA
-"Complete your assigned KnowledgeLink Trainings: Knowledge Link - Login Gateway (upenn.edu)
+Step,Task,Notes
+1,"Obtain your ID from the PennCard Center, located at the bookstore. To do this, you will need to schedule an appointment: https://penncard.business-services.upenn.edu/appointments Please make sure to bring: a valid photo ID (driver’s license/state or military-issued ID) OR a valid passport",Requires paperwork prepared by manager.
+2,Obtain your PennKey. Ensure that your assigned PennKey works: https://challengeresponse.apps.upenn.edu/,NA
+3,"Complete your assigned KnowledgeLink Trainings: https://www.uphs.upenn.edu/employeeselfservice/strategiclearning/kl/gateway.html
  You will need your PennKey to accomplish this. These trainings are meant to educate and test your knowledge on topics such as infection prevention, laboratory safety, protecting patient information (HIPAA), etc. You are unable to work independently in the lab until these are complete.",Typically takes 2-3 days.
-Gain access to PennBOX. PennBOX is where we store laboratory data and SOPs. Your project manager will be able to grant you access.,Laura/Anne to grant access to applicable folders
-"Gain access to LabVantage. LabVantage is our LIS system in the lab; we use it to label and file various specimen types. It is imperative that LabVantage is used well, as it is our way of finding any one of the thousands of samples we have on hand in numerous freezers. You will be introduced by way of email to our Penn/LabVantage liaison who will give you access and a brief training.",Laura to send introductory email on first day to LabVantage team to get access started and to schedule LabVantage training
-Lab Walk-through. A lab tech will walk you through our lab space and show you where our equipment and supplies are located as well as where the emergency shower and eyewash stations are. You will be introduced to EHRS lab safety standards and will be required to sign our Exposure Control Plan.,Will include reviews of ChemTracker and Lab Inventory.
-Introduction to your space. You will be assigned both a desk equipped with a computer and bench space. Your computer log-in should be your PennKey.,NA
-Project Specific Trainings... per LLC & BJK,Continually over the first two weeks.
+4,Gain access to PennBOX. PennBOX is where we store laboratory data and SOPs. Your project manager will be able to grant you access.,Laura/Anne to grant access to applicable folders
+5,"Gain access to LabVantage. LabVantage is our LIS system in the lab; we use it to label and file various specimen types. It is imperative that LabVantage is used well, as it is our way of finding any one of the thousands of samples we have on hand in numerous freezers. You will be introduced by way of email to our Penn/LabVantage liaison who will give you access and a brief training.",Laura to send introductory email on first day to LabVantage team to get access started and to schedule LabVantage training
+6,Lab Walk-through. A lab tech will walk you through our lab space and show you where our equipment and supplies are located as well as where the emergency shower and eyewash stations are. You will be introduced to EHRS lab safety standards and will be required to sign our Exposure Control Plan.,Will include reviews of ChemTracker and Lab Inventory.
+7,Introduction to your space. You will be assigned both a desk equipped with a computer and bench space. Your computer login should be your PennKey.,NA
+8,"Project Specific Trainings per Laura, Anne & Brendan.",Continually over the first two weeks.
