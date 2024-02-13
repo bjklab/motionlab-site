@@ -21,7 +21,7 @@ library(knitr)
 
 ```
   
-### Protocol Summary  
+### Download Protocols    
 
 ```{r}
 
@@ -34,19 +34,18 @@ list.files("protocols", recursive = TRUE, full.names = FALSE) |>
   mutate(Protocol = stringr::str_split(string = Protocol, pattern = "\\/")) |> 
   mutate(Focus = map_chr(.x = Protocol, .f = ~ .x[1])) |> 
   mutate(Protocol = map_chr(.x = Protocol, .f = ~ paste0(.x[-1], collapse = "/"))) |> 
+  mutate(Protocol = glue::glue("[{Protocol}]({paste(Focus,Protocol, sep = '/')})"),
+         Protocol = map(Protocol, gt::md)) |>
   select(Focus, Protocol) |> 
   identity() -> protocol_tab
 
 protocol_tab |> 
   gt() |> 
+  gt::fmt_markdown(Protocol) |> 
   gtExtras::gt_theme_538()
 
 
 ```
-
-
-### Download Protocols    
-
 
 
 
