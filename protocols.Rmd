@@ -12,10 +12,34 @@ favicon: microscope_white.png
 ```{r, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE}
 
 knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(janitor)
+library(gt)
+library(gtExtras)
+library(knitr)
+
 
 ```
   
 ### Protocols
+
+```{r}
+
+list.files("protocols", recursive = TRUE, full.names = FALSE) |> 
+  enframe() |> 
+  rename(Protocol = value) |> 
+  select(Protocol) |> 
+  #separate(col = Protocol, into = c("Folder", "Protocol", "deep_protocol"), sep = "\\/") |> 
+  #mutate(Protocol = ifelse(is.na(deep_protocol), Protocol, paste0(Protocol,"/",deep_protocol))) |> 
+  mutate(Protocol = stringr::str_split(string = Protocol, pattern = "\\/")) |> 
+  mutate(Focus = map_chr(.x = Protocol, .f = ~ .x[1])) |> 
+  mutate(Protocol = map_chr(.x = Protocol, .f = ~ paste0(.x[-1], collapse = "/"))) |> 
+  select(Focus, Protocol) |> 
+  gt() |> 
+  gtExtras::gt_theme_538()
+
+
+```
 
 
 
