@@ -35,6 +35,7 @@ list.files("protocols", recursive = TRUE, full.names = FALSE) |>
   mutate(Protocol = stringr::str_split(string = Protocol, pattern = "\\/")) |> 
   mutate(Focus = map_chr(.x = Protocol, .f = ~ .x[1])) |> 
   mutate(Protocol = map_chr(.x = Protocol, .f = ~ paste0(.x[-1], collapse = "/"))) |> 
+  select(Focus, Protocol) |> 
   identity() -> protocol_tab
 
 protocol_tab |> 
