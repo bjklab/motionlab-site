@@ -32,11 +32,11 @@ list.files("protocols", recursive = TRUE, full.names = FALSE) |>
   #separate(col = Protocol, into = c("Folder", "Protocol", "deep_protocol"), sep = "\\/") |> 
   #mutate(Protocol = ifelse(is.na(deep_protocol), Protocol, paste0(Protocol,"/",deep_protocol))) |> 
   mutate(Protocol = stringr::str_split(string = Protocol, pattern = "\\/")) |> 
-  mutate(Focus = map_chr(.x = Protocol, .f = ~ .x[1])) |> 
+  mutate(Folder = map_chr(.x = Protocol, .f = ~ .x[1])) |> 
   mutate(Protocol = map_chr(.x = Protocol, .f = ~ paste0(.x[-1], collapse = "/"))) |> 
-  mutate(Protocol = glue::glue("[{Protocol}]({paste(Focus,Protocol, sep = '/')})"),
+  mutate(Protocol = glue::glue("[{Protocol}]({paste(Folder,Protocol, sep = '/')})"),
          Protocol = map(Protocol, gt::md)) |>
-  select(Focus, Protocol) |> 
+  select(Folder, Protocol) |> 
   identity() -> protocol_tab
 
 protocol_tab |> 
