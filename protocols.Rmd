@@ -17,13 +17,14 @@ library(janitor)
 library(gt)
 library(gtExtras)
 library(knitr)
+library(downloadthis)
 
 
 ```
   
-### Protocols
+### Protocol Summary  
 
-```{r}
+```{r protocol_tab}
 
 list.files("protocols", recursive = TRUE, full.names = FALSE) |> 
   enframe() |> 
@@ -34,12 +35,18 @@ list.files("protocols", recursive = TRUE, full.names = FALSE) |>
   mutate(Protocol = stringr::str_split(string = Protocol, pattern = "\\/")) |> 
   mutate(Focus = map_chr(.x = Protocol, .f = ~ .x[1])) |> 
   mutate(Protocol = map_chr(.x = Protocol, .f = ~ paste0(.x[-1], collapse = "/"))) |> 
-  select(Focus, Protocol) |> 
+  identity() -> protocol_tab
+
+protocol_tab |> 
   gt() |> 
   gtExtras::gt_theme_538()
 
 
 ```
+
+
+### Download Protocols    
+
 
 
 
