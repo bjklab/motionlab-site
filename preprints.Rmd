@@ -68,7 +68,8 @@ bib_tib |>
   gtExtras::gt_theme_538() |> 
   gt::data_color(columns = Year,
                  method = "factor",
-                 palette = viridis::mako(n = n_distinct(filter(bib_tib, Journal == "preprint")$Year), alpha = 1),
+                 #palette = viridis::mako(n = n_distinct(filter(bib_tib, Journal == "preprint")$Year), alpha = 1),
+                 palette = viridis::mako(n = n_distinct(bib_tib$Year), alpha = 1),  
                  domain = NULL,
                  reverse = FALSE
   )
