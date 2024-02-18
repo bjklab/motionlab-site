@@ -1,0 +1,10 @@
+sample_type,original_sample_type,total_count,study,principal_investigator,study_count
+DNA,Bacterial,154,DAVID,David,42
+DNA,Bacterial,154,MIRA,Kelly,112
+DNA,Environmental,3,MIRA,Kelly,3
+DNA,Rectal,21,UP,Kelly,21
+DNA,Sputum,1151,MIRA,Kelly,1110
+DNA,Sputum,1151,TRIP-AMR,Kelly,41
+DNA,Stool,951,C.diff,Kelly,592
+DNA,Stool,951,MIRA,Kelly,281
+DNA,Stool,951,ONC,Ziegler,78

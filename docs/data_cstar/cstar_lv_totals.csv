@@ -1,0 +1,40 @@
+sample_type,total_sample_count,study,study_sample_count
+Bacterial Cell Iso,2196,ALCHEMY,13
+Bacterial Cell Iso,2196,ARLG_SOT,84
+Bacterial Cell Iso,2196,CRACKLE,11
+Bacterial Cell Iso,2196,CRE,563
+Bacterial Cell Iso,2196,ICEMAN,254
+Bacterial Cell Iso,2196,IMPALA_BC,135
+Bacterial Cell Iso,2196,INTEGRATE,438
+Bacterial Cell Iso,2196,MERLIN,154
+Bacterial Cell Iso,2196,MIRA,31
+Bacterial Cell Iso,2196,MRSA,2
+Bacterial Cell Iso,2196,QC,1
+Bacterial Cell Iso,2196,SOTDDI,479
+Bacterial Cell Iso,2196,TRIP-AMR,16
+Bacterial Cell Iso,2196,mVACS,15
+Bacterial Culture,6,MERLIN,1
+Bacterial Culture,6,TRIP-AMR,5
+Cell Lysate,644,ARLG_SOT,1
+Cell Lysate,644,CRE,51
+Cell Lysate,644,DAVID,1
+Cell Lysate,644,ICEMAN,119
+Cell Lysate,644,INTEGRATE,455
+Cell Lysate,644,MRSA,1
+Cell Lysate,644,TRIP-AMR,16
+Cell Pellet,35,ICEMAN,35
+DNA,66,MIRA,53
+DNA,66,TRIP-AMR,13
+Environmental,2,ICEMAN,2
+Groin,24,ICEMAN,24
+Nasal,6,ICEMAN,6
+Oral,24,ICEMAN,24
+Rectal,25,ICEMAN,25
+RNA,1,QC,1
+Stool,323,ICEMAN,13
+Stool,323,MERLIN,1
+Stool,323,SPACEMAN,1
+Stool,323,mVACS,308
+Virus,18,QC,1
+Virus,18,TRIP-AMR,17
+NA,1,QC,1
