@@ -54,6 +54,8 @@ navbar:
         - text: "Pre-Prints"
           href: preprints.html
       href: publications.html
+    - text: "C-STAR"
+      href: cstar.html
     # - text: "News"
     #   href: news.html
     # - icon: fa fa-rss
