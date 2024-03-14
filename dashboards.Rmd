@@ -17,7 +17,7 @@ knitr::opts_chunk$set(echo = FALSE)
   
   
 <details>
-<summary style='font-size:1.2rem'> **mVACS: mRNA Vaccines for _C. difficile_ Suppression - Human Subjects Core (U19 AI174998 - Core C)** <a href="biorepo_reports/biorepository_report_mVACS.html" target="_blank">Dashboard</a> </summary>    
+<summary style='font-size:1.2rem'> **mVACS: mRNA Vaccines for _C. difficile_ Suppression - Human Subjects Core (U19 AI174998 - Core C)** <a href="biorepo_reports/biorepository_report_mVACS.html" target="_blank">Dashboard ↗</a> </summary>    
   
 <iframe src="biorepo_reports/biorepository_report_mVACS.html" width=800 height=800 style="border: 0; box-shadow: 5px 5px 56px 0px rgba(0,0,0,0.25);"></iframe>  
 
@@ -25,7 +25,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 
 <details>
-<summary style='font-size:1.2rem'> **SPACEMAN Respiratory Microbiome (U54CK000610 CDC Prevention Epicenters)** <a href="data_cstar/spaceman/p_study_specimen_totals_spaceman.html" target="_blank">Dashboard</a> </summary>    
+<summary style='font-size:1.2rem'> **SPACEMAN Respiratory Microbiome (U54CK000610 CDC Prevention Epicenters)** <a href="data_cstar/spaceman/p_study_specimen_totals_spaceman.html" target="_blank">Dashboard ↗</a> </summary>    
   
 <iframe src="data_cstar/spaceman/p_study_specimen_totals_spaceman.html" width=800 height=550 style="border: 0; box-shadow: 5px 5px 56px 0px rgba(0,0,0,0.25);"></iframe>  
 
@@ -33,7 +33,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 
 <details>
-<summary style='font-size:1.2rem'> **CRE Biorepository (U54CK000610 CDC Prevention Epicenters)** <a href="data_cstar/cre/p_study_specimen_totals_cre.html" target="_blank">Dashboard</a> </summary>    
+<summary style='font-size:1.2rem'> **CRE Biorepository (U54CK000610 CDC Prevention Epicenters)** <a href="data_cstar/cre/p_study_specimen_totals_cre.html" target="_blank">Dashboard ↗</a> </summary>    
   
 <iframe src="data_cstar/cre/p_study_specimen_totals_cre.html" width=800 height=550 style="border: 0; box-shadow: 5px 5px 56px 0px rgba(0,0,0,0.25);"></iframe>  
 
