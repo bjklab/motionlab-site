@@ -39,7 +39,8 @@ read_csv("people/MOTIONPeopleWithSurv_DATA.csv") |>
 #' #####################################
 motion_people |> 
   mutate(your_pronouns = gsub(pattern = "\\(|\\)", replacement = "", x = your_pronouns)) |> 
-  mutate(biography = glue("<b>{your_first_name} {your_middle_initial} {your_last_name}, {your_credentials}</b> ({your_pronouns}) is {your_title} at the University of Pennsylvania. {your_work_background} {your_focus} {your_interests} Additional information can be found at: {your_website}", .na = "")) |>
+  mutate(your_website = ifelse(is.na(your_website), NA, glue("Additional information can be found <a href='{your_website}'>here</a>."))) |> 
+  mutate(biography = glue("<b>{your_first_name} {your_middle_initial}. {your_last_name}, {your_credentials}</b> ({your_pronouns}) is {your_title} at the University of Pennsylvania. {your_work_background} {your_focus} {your_interests} {your_website}", .na = "")) |>
   mutate(headshot_path = paste0("./people/headshots/",your_photo)) |> 
   select(headshot_path, biography) |> 
   identity() -> motion_bios
@@ -51,8 +52,9 @@ motion_bios |>
   gt::cols_align(align = "center", columns = headshot_path) |> 
   gt::cols_align(align = "left", columns = biography) |> 
   gt::fmt_markdown(biography) |> 
-  gt_img_rows(columns = headshot_path, img_source = "local", height = 200) |> 
-  gt::cols_width(headshot_path ~ px(200))
+  gtExtras::gt_img_rows(columns = headshot_path, img_source = "local", height = 200) |> 
+  gt::cols_width(headshot_path ~ px(200)) |> 
+  gtExtras::gt_theme_538()
 
 
 
