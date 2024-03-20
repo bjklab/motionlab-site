@@ -33,6 +33,8 @@ navbar:
           href: discussion_topics.html
         - text: "Meeting Schedule"
           href: lab_schedule.html
+        - text: "MicroBioCode ↗"
+          href: https://www.med.upenn.edu/microbiocode/
         - text: "Orders & Inventory"
           href: orders_and_inventory.html
         - text: "Protocol Library"
