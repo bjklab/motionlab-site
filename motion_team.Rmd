@@ -51,7 +51,8 @@ motion_bios |>
   gt::cols_align(align = "center", columns = headshot_path) |> 
   gt::cols_align(align = "left", columns = biography) |> 
   gt::fmt_markdown(biography) |> 
-  gt_img_rows(columns = headshot_path, img_source = "local", height = 200)
+  gt_img_rows(columns = headshot_path, img_source = "local", height = 200) |> 
+  gt::cols_width(headshot_path ~ px(300))
 
 
 
