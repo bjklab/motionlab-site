@@ -32,12 +32,16 @@ library(gtExtras)
 read_csv("people/MOTIONPeopleWithSurv_DATA.csv") |> 
   identity() -> motion_people
 
+read_csv("people/motion_people_roles.csv") |> 
+  identity() -> people_roles
 
 
 #' #####################################
 #' concatenate bio data to paragraph and read photos
 #' #####################################
 motion_people |> 
+  left_join(people_roles, by = c("your_first_name", "your_last_name")) |> 
+  filter(role %in% c("pi", "member")) |> 
   mutate(your_pronouns = gsub(pattern = "\\(|\\)", replacement = "", x = your_pronouns)) |> 
   mutate(your_website = ifelse(is.na(your_website), NA, glue("Additional information can be found <a href='{your_website}'>here</a>."))) |> 
   mutate(biography = glue("<b>{your_first_name} {your_middle_initial}. {your_last_name}, {your_credentials}</b> ({your_pronouns}) is {your_title} at the University of Pennsylvania. {your_work_background} {your_focus} {your_interests} {your_website}", .na = "")) |>
