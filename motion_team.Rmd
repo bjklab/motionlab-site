@@ -15,7 +15,9 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```
 
-```{r people, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, layout="l-body-outset", fig.width=6}
+### Lab Members  
+
+```{r members, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, layout="l-body-outset", fig.width=6}
 
 #' #################################
 #' load libraries and set seed
@@ -41,15 +43,17 @@ read_csv("people/motion_people_roles.csv") |>
 #' #####################################
 motion_people |> 
   left_join(people_roles, by = c("your_first_name", "your_last_name")) |> 
-  filter(role %in% c("pi", "member")) |> 
   mutate(your_pronouns = gsub(pattern = "\\(|\\)", replacement = "", x = your_pronouns)) |> 
   mutate(your_website = ifelse(is.na(your_website), NA, glue("Additional information can be found <a href='{your_website}'>here</a>."))) |> 
   mutate(biography = glue("<b>{your_first_name} {your_middle_initial}. {your_last_name}, {your_credentials}</b> ({your_pronouns}) is {your_title} at the University of Pennsylvania. {your_work_background} {your_focus} {your_interests} {your_website}", .na = "")) |>
   mutate(headshot_path = paste0("./people/headshots/",your_photo)) |> 
-  select(headshot_path, biography) |> 
+  select(headshot_path, biography, role, your_last_name) |> 
   identity() -> motion_bios
 
 motion_bios |> 
+  arrange(desc(role), your_last_name) |> 
+  filter(role %in% c("pi", "member")) |> 
+  select(headshot_path, biography) |> 
   gt() |> 
   #gt::cols_label(headshot_path = "", biography = "") |> 
   gt::tab_options(column_labels.hidden = TRUE) |> 
@@ -64,4 +68,28 @@ motion_bios |>
 
 
 ```
+
+### Lab Partners  
+
+```{r partners, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, layout="l-body-outset", fig.width=6}
+
+motion_bios |> 
+  arrange(desc(role), your_last_name) |> 
+  filter(role %in% c("partner")) |> 
+  select(headshot_path, biography) |> 
+  gt() |> 
+  #gt::cols_label(headshot_path = "", biography = "") |> 
+  gt::tab_options(column_labels.hidden = TRUE) |> 
+  gt::cols_align(align = "center", columns = headshot_path) |> 
+  gt::cols_align(align = "left", columns = biography) |> 
+  gt::fmt_markdown(biography) |> 
+  gtExtras::gt_img_rows(columns = headshot_path, img_source = "local", height = 200) |> 
+  gt::cols_width(headshot_path ~ px(200)) |> 
+  #gtExtras::gt_theme_538()
+  gtExtras::gt_theme_guardian()
+
+
+
+```
+
 
