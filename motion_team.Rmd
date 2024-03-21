@@ -54,15 +54,10 @@ motion_bios |>
   gt::fmt_markdown(biography) |> 
   gtExtras::gt_img_rows(columns = headshot_path, img_source = "local", height = 200) |> 
   gt::cols_width(headshot_path ~ px(200)) |> 
-  gtExtras::gt_theme_538()
+  #gtExtras::gt_theme_538()
+  gtExtras::gt_theme_guardian()
 
 
 
 ```
 
-
- <br>
-
- <br>
-
- <br>
