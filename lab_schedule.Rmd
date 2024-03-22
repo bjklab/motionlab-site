@@ -8,7 +8,7 @@ Meetings are held at 4pm on Tuesdays, in Johnson Pavilion 501.
   
 ### Upcoming Meetings  
   
-```{r upcoming_meetings, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, layout="l-body-outset", fig.width=6}
+```{r upcoming_meetings, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, layout="l-body-outset"}
 
 #' #################################
 #' load libraries and set seed
@@ -54,7 +54,7 @@ motion_lab_schedule |>
   
 ### Past Meetings  
   
-```{r past_meetings, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, layout="l-body-outset", fig.width=6}
+```{r past_meetings, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, layout="l-body-outset"}
 
 #' #################################
 #'  read and format meeting data
