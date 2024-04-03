@@ -39,6 +39,12 @@ read_csv("people/motion_people_roles.csv") |>
 
 
 #' #####################################
+#' convert headshots to webp format (size compression)
+#' #####################################
+system("cd ~/motionlab-site/people/headshots; bash convert_to_webp.sh")
+
+
+#' #####################################
 #' concatenate bio data to paragraph and read photos
 #' #####################################
 motion_people |> 
@@ -49,22 +55,23 @@ motion_people |>
   mutate(your_website = ifelse(is.na(your_website), NA, glue("Additional information can be found <a href='{your_website}'>here</a>."))) |> 
   mutate(biography = glue("<b>{your_first_name} {your_middle_initial} {your_last_name}, {your_credentials}</b> ({your_pronouns}) is {your_title} at the University of Pennsylvania. {your_work_background} {your_focus} {your_interests} {your_website}", .na = "")) |>
   mutate(headshot_path = paste0("./people/headshots/",your_photo)) |> 
-  select(headshot_path, biography, role, your_last_name) |> 
+  mutate(headshot_path_webp = gsub(pattern = "jpg|jpeg|png|PNG|jpeg|JPG","webp",headshot_path)) |> 
+  select(headshot_path, headshot_path_webp, biography, role, your_last_name) |> 
   identity() -> motion_bios
 
 motion_bios |> 
   arrange(desc(role), your_last_name) |> 
   filter(role %in% c("pi", "member")) |> 
-  select(headshot_path, biography) |> 
+  select(headshot_path_webp, biography) |> 
   distinct() |> 
   gt() |> 
-  #gt::cols_label(headshot_path = "", biography = "") |> 
+  #gt::cols_label(headshot_path_webp = "", biography = "") |> 
   gt::tab_options(column_labels.hidden = TRUE) |> 
-  gt::cols_align(align = "center", columns = headshot_path) |> 
+  gt::cols_align(align = "center", columns = headshot_path_webp) |> 
   gt::cols_align(align = "left", columns = biography) |> 
   gt::fmt_markdown(biography) |> 
-  gt::cols_width(headshot_path ~ px(300)) |> 
-  gtExtras::gt_img_rows(columns = headshot_path, img_source = "local", height = 200) |> 
+  gt::cols_width(headshot_path_webp ~ px(300)) |> 
+  gtExtras::gt_img_rows(columns = headshot_path_webp, img_source = "local", height = 200) |> 
   #gtExtras::gt_theme_538()
   gtExtras::gt_theme_guardian() |> 
   gt::opt_table_outline(style = "solid", width = px(3), color = "#FFFFFF") |> 
@@ -103,16 +110,16 @@ members |>
 motion_bios |> 
   arrange(desc(role), your_last_name) |> 
   filter(role %in% c("partner")) |> 
-  select(headshot_path, biography) |> 
+  select(headshot_path_webp, biography) |> 
   distinct() |> 
   gt() |> 
-  #gt::cols_label(headshot_path = "", biography = "") |> 
+  #gt::cols_label(headshot_path_webp = "", biography = "") |> 
   gt::tab_options(column_labels.hidden = TRUE) |> 
-  gt::cols_align(align = "center", columns = headshot_path) |> 
+  gt::cols_align(align = "center", columns = headshot_path_webp) |> 
   gt::cols_align(align = "left", columns = biography) |> 
   gt::fmt_markdown(biography) |> 
-  gt::cols_width(headshot_path ~ px(300)) |> 
-  gtExtras::gt_img_rows(columns = headshot_path, img_source = "local", height = 200) |> 
+  gt::cols_width(headshot_path_webp ~ px(300)) |> 
+  gtExtras::gt_img_rows(columns = headshot_path_webp, img_source = "local", height = 200) |> 
   #gtExtras::gt_theme_538()
   gtExtras::gt_theme_guardian() |> 
   gt::opt_table_outline(style = "solid", width = px(3), color = "#FFFFFF") |> 
