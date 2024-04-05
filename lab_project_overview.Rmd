@@ -1,0 +1,51 @@
+---
+title: "Project Overview"
+site: distill::distill_website
+favicon: microscope_white.png
+---
+
+
+### Project Pipeline    
+  
+```{r project_pipeline, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, layout="l-body-outset"}
+
+#' #################################
+#' load libraries and set seed
+#' #################################
+library(tidyverse)
+library(ggtext)
+
+#' #################################
+#'  read and format meeting data
+#' #################################
+
+read_csv(file = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_2-GKnR34K_O-NGMFITGN1m3_NtOo1pBL_ndBtYK-0zw5bLlYeUz7eIx-hh9dBYAkhVMdnQhZ0iNJ/pub?gid=0&single=true&output=csv") %>%
+  identity() -> motion_lab_projects
+motion_lab_projects
+
+motion_lab_schedule |> 
+  write_csv("discussion_topics/motion_lab_schedule.csv")
+
+motion_lab_schedule |> 
+  filter(Date >= Sys.Date()) |> 
+  arrange(Date) |> 
+  gt() |> 
+  gt::sub_missing() |> 
+  gtExtras::gt_theme_538() |> 
+  gtExtras::gt_highlight_rows(rows = Focus == "ASPIRE-MOTION Joint Meeting", fill = "lightgrey", target_col = "Focus", font_weight = "normal") |> 
+  gtExtras::gt_highlight_rows(rows = Focus == "Environment-MOTION Joint Meeting", fill = "grey24", font_color = "white", target_col = "Focus", font_weight = "normal")
+#   gt_color_rows(
+#     Focus, 
+#     palette = "viridis::turbo", 
+#     domain = as.factor(motion_lab_schedule$Focus),
+#     pal_type = "discrete"
+#    )
+
+
+
+
+
+```
+  
+<br>    
+  
