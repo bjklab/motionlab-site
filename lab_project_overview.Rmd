@@ -15,6 +15,7 @@ library(tidyverse)
 library(ggtext)
 library(viridis)
 library(colorspace)
+library(svglite)
 
 
 #' #################################
@@ -38,7 +39,7 @@ motion_lab_projects |>
          y_coord = rep(15)) |> 
   mutate(x_coord_end = lead(x_coord, 1)) |> 
   mutate(fill_color = viridis::turbo(4)[x_coord],
-         fill_color = colorspace::lighten(fill_color, 0.2)) |> 
+         fill_color = colorspace::lighten(fill_color, 0.5)) |> 
   identity() -> projects_polar
 
 
@@ -50,20 +51,30 @@ motion_lab_projects |>
 projects_polar |> 
   ggplot(data = _) + 
   geom_segment(aes(x = x_coord, xend = x_coord_end, y = y_coord, yend = y_coord)) +
-  ggtext::geom_textbox(aes(x = x_coord, y = y_coord, fill = fill_color, label = project_list), halign = 1) +
+  ggtext::geom_textbox(aes(x = x_coord, y = y_coord, fill = fill_color, label = project_list), halign = 1, family = "Roboto") +
   scale_x_continuous(limits = c(1,4), expand = c(0.1,0.1)) +
   scale_y_continuous(limits = c(0, 16)) +
   scale_fill_identity() +
   coord_radial(start = 0.25*pi, end = 1.75*pi, inner.radius = 1, direction = -1, clip = "off") +
   theme_void() +
   #theme(axis.line.theta = element_line(color = "black"))
-  theme()
+  theme() |> 
+  identity() -> p_projects_polar
 
+p_projects_polar |> 
+  ggsave(plot = _, filename = "discussion_topics/p_projects_polar.png", height = 6, width = 8, units = "in", dpi = 600)
 
-
+p_projects_polar |> 
+  ggsave(plot = _, filename = "discussion_topics/p_projects_polar.svg", height = 6, width = 8, units = "in")
 
 
 ```
-  
+
+
+```{r fig_projects_polar, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, autodep=TRUE, fig.align='center', out.width='90%'}
+knitr::include_graphics(path = "discussion_topics/p_projects_polar.svg")
+```
+
 <br>    
   
+
