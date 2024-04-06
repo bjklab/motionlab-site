@@ -87,27 +87,27 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>motion lab: Project Dashboards</title>
+  <title>motion lab: Project Overview</title>
 
 
   <link rel="icon" type="image/png" href="microscope_white.png"/>
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="motion lab: Project Dashboards"/>
+  <meta property="og:title" content="motion lab: Project Overview"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="motion lab"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="motion lab: Project Dashboards"/>
+  <meta property="twitter:title" content="motion lab: Project Overview"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","output","site","favicon"]}},"value":[{"type":"character","attributes":{},"value":["Project Dashboards"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","anchor_sections","css"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["theme_inferno_black.css","background_grad.css"]}]}]},{"type":"character","attributes":{},"value":["distill::distill_website"]},{"type":"character","attributes":{},"value":["microscope_white.png"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","site","favicon"]}},"value":[{"type":"character","attributes":{},"value":["Project Overview"]},{"type":"character","attributes":{},"value":["distill::distill_website"]},{"type":"character","attributes":{},"value":["microscope_white.png"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2189,8 +2189,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
   <!--/radix_placeholder_site_in_header-->
 
-  <link rel="stylesheet" href="theme_inferno_black.css" type="text/css"/>
-  <link rel="stylesheet" href="background_grad.css" type="text/css"/>
 
 </head>
 
@@ -2199,7 +2197,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Project Dashboards","authors":[]}
+{"title":"Project Overview","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2270,7 +2268,7 @@ Papers
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Project Dashboards</h1>
+<h1>Project Overview</h1>
 
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
@@ -2279,31 +2277,25 @@ Papers
 
 
 <div class="d-article">
-<div class="layout-chunk" data-layout="l-body">
-
+<h3 id="project-pipeline">Project Pipeline</h3>
+<div class="layout-chunk" data-layout="l-body-outset">
+<pre><code># A tibble: 9 × 4
+  `Prep &amp; Regulatory` Specimen &amp; Data Collectio…¹ `Analysis &amp; Writing`
+  &lt;chr&gt;               &lt;chr&gt;                       &lt;chr&gt;               
+1 FACE-MDRO           mVACS                       ICEMAN              
+2 mVACS-PRO           SPACEMAN                    FMTSCDI             
+3 NEXUS               INTEGRATE                   ESC                 
+4 &lt;NA&gt;                ALCHEMY                     FMTFI               
+5 &lt;NA&gt;                IMPALA                      FMTD                
+6 &lt;NA&gt;                PREDICT                     TREASURE            
+7 &lt;NA&gt;                &lt;NA&gt;                        STOPCDI             
+8 &lt;NA&gt;                &lt;NA&gt;                        MERLIN              
+9 &lt;NA&gt;                &lt;NA&gt;                        MUSIC               
+# ℹ abbreviated name: ¹​`Specimen &amp; Data Collection`
+# ℹ 1 more variable: `Revision &amp; Resubmission` &lt;chr&gt;</code></pre>
 </div>
-<details>
-<p><summary style='font-size:1.2rem'> <strong>mVACS: mRNA Vaccines for <em>C. difficile</em> Suppression - Human Subjects Core (U19 AI174998 - Core C)</strong> <a href="biorepo_reports/biorepository_report_mVACS.html" target="_blank">Dashboard ↗</a> </summary></p>
-<iframe src="biorepo_reports/biorepository_report_mVACS.html" width="800" height="800" style="border: 0; box-shadow: 5px 5px 56px 0px rgba(0,0,0,0.25);">
-</iframe>
-</details>
-<details>
-<p><summary style='font-size:1.2rem'> <strong>SPACEMAN Respiratory Microbiome (U54CK000610 CDC Prevention Epicenters)</strong> <a href="data_cstar/spaceman/p_study_specimen_totals_spaceman.html" target="_blank">Dashboard ↗</a> </summary></p>
-<iframe src="data_cstar/spaceman/p_study_specimen_totals_spaceman.html" width="800" height="550" style="border: 0; box-shadow: 5px 5px 56px 0px rgba(0,0,0,0.25);">
-</iframe>
-</details>
-<details>
-<p><summary style='font-size:1.2rem'> <strong>CRE Biorepository (U54CK000610 CDC Prevention Epicenters)</strong> <a href="data_cstar/cre/p_study_specimen_totals_cre.html" target="_blank">Dashboard ↗</a> </summary></p>
-<iframe src="data_cstar/cre/p_study_specimen_totals_cre.html" width="800" height="550" style="border: 0; box-shadow: 5px 5px 56px 0px rgba(0,0,0,0.25);">
-</iframe>
-</details>
-<details>
-<p><summary style='font-size:1.2rem'> <strong>Fecal microbiota transplantation to address colonization and environmental contamination with multidrug-resistant organisms (FACE-MDRO) (CDC U54-CK000610)</strong> Dashboard </summary></p>
-</details>
 <p><br></p>
-<p><br></p>
-<p><br></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

@@ -23,23 +23,23 @@ read_csv(file = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_2-GKnR34K_O-
   identity() -> motion_lab_projects
 motion_lab_projects
 
-motion_lab_schedule |> 
-  write_csv("discussion_topics/motion_lab_schedule.csv")
+# motion_lab_schedule |> 
+#   write_csv("discussion_topics/motion_lab_schedule.csv")
 
-motion_lab_schedule |> 
-  filter(Date >= Sys.Date()) |> 
-  arrange(Date) |> 
-  gt() |> 
-  gt::sub_missing() |> 
-  gtExtras::gt_theme_538() |> 
-  gtExtras::gt_highlight_rows(rows = Focus == "ASPIRE-MOTION Joint Meeting", fill = "lightgrey", target_col = "Focus", font_weight = "normal") |> 
-  gtExtras::gt_highlight_rows(rows = Focus == "Environment-MOTION Joint Meeting", fill = "grey24", font_color = "white", target_col = "Focus", font_weight = "normal")
-#   gt_color_rows(
-#     Focus, 
-#     palette = "viridis::turbo", 
-#     domain = as.factor(motion_lab_schedule$Focus),
-#     pal_type = "discrete"
-#    )
+# motion_lab_schedule |> 
+#   filter(Date >= Sys.Date()) |> 
+#   arrange(Date) |> 
+#   gt() |> 
+#   gt::sub_missing() |> 
+#   gtExtras::gt_theme_538() |> 
+#   gtExtras::gt_highlight_rows(rows = Focus == "ASPIRE-MOTION Joint Meeting", fill = "lightgrey", target_col = "Focus", font_weight = "normal") |> 
+#   gtExtras::gt_highlight_rows(rows = Focus == "Environment-MOTION Joint Meeting", fill = "grey24", font_color = "white", target_col = "Focus", font_weight = "normal")
+# #   gt_color_rows(
+# #     Focus, 
+# #     palette = "viridis::turbo", 
+# #     domain = as.factor(motion_lab_schedule$Focus),
+# #     pal_type = "discrete"
+# #    )
 
 
 
