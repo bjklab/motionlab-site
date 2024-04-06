@@ -2279,20 +2279,20 @@ Papers
 <div class="d-article">
 <h3 id="project-pipeline">Project Pipeline</h3>
 <div class="layout-chunk" data-layout="l-body-outset">
-<pre><code># A tibble: 9 × 4
-  `Prep &amp; Regulatory` Specimen &amp; Data Collectio…¹ `Analysis &amp; Writing`
-  &lt;chr&gt;               &lt;chr&gt;                       &lt;chr&gt;               
-1 FACE-MDRO           mVACS                       ICEMAN              
-2 mVACS-PRO           SPACEMAN                    FMTSCDI             
-3 NEXUS               INTEGRATE                   ESC                 
-4 &lt;NA&gt;                ALCHEMY                     FMTFI               
-5 &lt;NA&gt;                IMPALA                      FMTD                
-6 &lt;NA&gt;                PREDICT                     TREASURE            
-7 &lt;NA&gt;                &lt;NA&gt;                        STOPCDI             
-8 &lt;NA&gt;                &lt;NA&gt;                        MERLIN              
-9 &lt;NA&gt;                &lt;NA&gt;                        MUSIC               
-# ℹ abbreviated name: ¹​`Specimen &amp; Data Collection`
-# ℹ 1 more variable: `Revision &amp; Resubmission` &lt;chr&gt;</code></pre>
+<pre><code># A tibble: 36 × 4
+   project_stage              project_list x_coord y_coord
+   &lt;chr&gt;                      &lt;chr&gt;          &lt;dbl&gt;   &lt;dbl&gt;
+ 1 Prep &amp; Regulatory          FACE-MDRO          1       8
+ 2 Specimen &amp; Data Collection mVACS              3       6
+ 3 Analysis &amp; Writing         ICEMAN             3       4
+ 4 Revision &amp; Resubmission    metaKT             1       2
+ 5 Prep &amp; Regulatory          mVACS-PRO          1       8
+ 6 Specimen &amp; Data Collection SPACEMAN           3       6
+ 7 Analysis &amp; Writing         FMTSCDI            3       4
+ 8 Revision &amp; Resubmission    TECTONIC           1       2
+ 9 Prep &amp; Regulatory          NEXUS              1       8
+10 Specimen &amp; Data Collection INTEGRATE          3       6
+# ℹ 26 more rows</code></pre>
 </div>
 <p><br></p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
