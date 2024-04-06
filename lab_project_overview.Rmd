@@ -14,6 +14,7 @@ favicon: microscope_white.png
 #' #################################
 library(tidyverse)
 library(ggtext)
+library(ggforce)
 
 #' #################################
 #'  read and format meeting data
@@ -21,26 +22,15 @@ library(ggtext)
 
 read_csv(file = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_2-GKnR34K_O-NGMFITGN1m3_NtOo1pBL_ndBtYK-0zw5bLlYeUz7eIx-hh9dBYAkhVMdnQhZ0iNJ/pub?gid=0&single=true&output=csv") %>%
   identity() -> motion_lab_projects
-motion_lab_projects
 
-# motion_lab_schedule |> 
-#   write_csv("discussion_topics/motion_lab_schedule.csv")
+motion_lab_projects |> 
+  write_csv("discussion_topics/motion_lab_projects.csv")
 
-# motion_lab_schedule |> 
-#   filter(Date >= Sys.Date()) |> 
-#   arrange(Date) |> 
-#   gt() |> 
-#   gt::sub_missing() |> 
-#   gtExtras::gt_theme_538() |> 
-#   gtExtras::gt_highlight_rows(rows = Focus == "ASPIRE-MOTION Joint Meeting", fill = "lightgrey", target_col = "Focus", font_weight = "normal") |> 
-#   gtExtras::gt_highlight_rows(rows = Focus == "Environment-MOTION Joint Meeting", fill = "grey24", font_color = "white", target_col = "Focus", font_weight = "normal")
-# #   gt_color_rows(
-# #     Focus, 
-# #     palette = "viridis::turbo", 
-# #     domain = as.factor(motion_lab_schedule$Focus),
-# #     pal_type = "discrete"
-# #    )
-
+motion_lab_projects |> 
+  pivot_longer(cols = everything(), names_to = "project_stage", values_to = "project_list") |> 
+  mutate(x_coord = case_when(project_stage == "Prep & Regulatory" ~ 1, project_stage == "Specimen & Data Collection" ~ 3, project_stage == "Analysis & Writing" ~ 3, project_stage == "Revision & Resubmission" ~ 1),
+         y_coord = case_when(project_stage == "Prep & Regulatory" ~ 8, project_stage == "Specimen & Data Collection" ~ 6, project_stage == "Analysis & Writing" ~ 4, project_stage == "Revision & Resubmission" ~ 2)
+  )
 
 
 
