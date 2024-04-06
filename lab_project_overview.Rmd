@@ -14,10 +14,12 @@ favicon: microscope_white.png
 #' #################################
 library(tidyverse)
 library(ggtext)
-library(ggforce)
+library(viridis)
+library(colorspace)
+
 
 #' #################################
-#'  read and format meeting data
+#'  read and format project data
 #' #################################
 
 read_csv(file = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_2-GKnR34K_O-NGMFITGN1m3_NtOo1pBL_ndBtYK-0zw5bLlYeUz7eIx-hh9dBYAkhVMdnQhZ0iNJ/pub?gid=0&single=true&output=csv") %>%
@@ -27,10 +29,30 @@ motion_lab_projects |>
   write_csv("discussion_topics/motion_lab_projects.csv")
 
 motion_lab_projects |> 
-  pivot_longer(cols = everything(), names_to = "project_stage", values_to = "project_list") |> 
-  mutate(x_coord = case_when(project_stage == "Prep & Regulatory" ~ 1, project_stage == "Specimen & Data Collection" ~ 3, project_stage == "Analysis & Writing" ~ 3, project_stage == "Revision & Resubmission" ~ 1),
-         y_coord = case_when(project_stage == "Prep & Regulatory" ~ 8, project_stage == "Specimen & Data Collection" ~ 6, project_stage == "Analysis & Writing" ~ 4, project_stage == "Revision & Resubmission" ~ 2)
-  )
+  pivot_longer(cols = everything(), names_to = "project_stage", values_to = "projects") |> 
+  group_by(project_stage) |> 
+  nest() |> 
+  summarise(project_list = map2_chr(.x = project_stage, .y = data, .f = ~ paste0(.x, "<br>", paste(pull(.y, projects), collapse = "<br>")))) |> 
+  ungroup() |> 
+  mutate(x_coord = case_when(project_stage == "Prep & Regulatory" ~ 1, project_stage == "Specimen & Data Collection" ~ 2, project_stage == "Analysis & Writing" ~ 3, project_stage == "Revision & Resubmission" ~ 4),
+         y_coord = rep(10)) |> 
+  mutate(fill_color = viridis::turbo(4)[x_coord],
+         fill_color = colorspace::lighten(fill_color, 0.2)) |> 
+  identity() -> projects_polar
+
+
+
+#' #################################
+#'  plot project pipeline
+#' #################################
+
+projects_polar |> 
+  ggplot(data = _) + 
+  ggtext::geom_textbox(aes(x = x_coord, y = y_coord, fill = fill_color, label = project_list)) +
+  scale_fill_identity() +
+  coord_polar(start = 1) +
+  theme_void()
+
 
 
 
