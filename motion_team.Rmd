@@ -48,6 +48,7 @@ system("cd ~/motionlab-site/people/headshots; bash convert_to_webp.sh")
 #' concatenate bio data to paragraph and read photos
 #' #####################################
 motion_people |> 
+  filter(!is.na(your_photo)) |> 
   left_join(people_roles, by = c("your_first_name", "your_last_name")) |> 
   mutate(your_pronouns = gsub(pattern = "\\(|\\)", replacement = "", x = your_pronouns)) |> 
   mutate(your_pronouns = tolower(your_pronouns)) |> 

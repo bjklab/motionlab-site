@@ -5,9 +5,8 @@ favicon: microscope_white.png
 ---
 
 
-### Project Pipeline    
-  
-```{r project_pipeline, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, layout="l-body-outset"}
+ 
+```{r project_pipeline, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, layout="l-body-outset", fig.align='center', fig.width=6}
 
 #' #################################
 #' load libraries and set seed
@@ -30,12 +29,14 @@ motion_lab_projects |>
 
 motion_lab_projects |> 
   pivot_longer(cols = everything(), names_to = "project_stage", values_to = "projects") |> 
+  filter(!is.na(projects)) |> 
   group_by(project_stage) |> 
   nest() |> 
-  summarise(project_list = map2_chr(.x = project_stage, .y = data, .f = ~ paste0(.x, "<br>", paste(pull(.y, projects), collapse = "<br>")))) |> 
+  summarise(project_list = map2_chr(.x = project_stage, .y = data, .f = ~ paste0("<b>", .x, "</b><br>", paste(pull(.y, projects), collapse = "<br>")))) |> 
   ungroup() |> 
   mutate(x_coord = case_when(project_stage == "Prep & Regulatory" ~ 1, project_stage == "Specimen & Data Collection" ~ 2, project_stage == "Analysis & Writing" ~ 3, project_stage == "Revision & Resubmission" ~ 4),
-         y_coord = rep(10)) |> 
+         y_coord = rep(15)) |> 
+  mutate(x_coord_end = lead(x_coord, 1)) |> 
   mutate(fill_color = viridis::turbo(4)[x_coord],
          fill_color = colorspace::lighten(fill_color, 0.2)) |> 
   identity() -> projects_polar
@@ -48,10 +49,15 @@ motion_lab_projects |>
 
 projects_polar |> 
   ggplot(data = _) + 
-  ggtext::geom_textbox(aes(x = x_coord, y = y_coord, fill = fill_color, label = project_list)) +
+  geom_segment(aes(x = x_coord, xend = x_coord_end, y = y_coord, yend = y_coord)) +
+  ggtext::geom_textbox(aes(x = x_coord, y = y_coord, fill = fill_color, label = project_list), halign = 1) +
+  scale_x_continuous(limits = c(1,4), expand = c(0.1,0.1)) +
+  scale_y_continuous(limits = c(0, 16)) +
   scale_fill_identity() +
-  coord_polar(start = 1) +
-  theme_void()
+  coord_radial(start = 0.25*pi, end = 1.75*pi, inner.radius = 1, direction = -1, clip = "off") +
+  theme_void() +
+  #theme(axis.line.theta = element_line(color = "black"))
+  theme()
 
 
 

@@ -47,8 +47,8 @@ navbar:
           href: projects.html
         - text: "Dashboards"
           href: dashboards.html
-        - text: "Tasks"
-          href: project_tasks.html
+        - text: "Development"
+          href: lab_project_overview.html
     - text: "Papers"
       menu: 
         - text: "Publications"
