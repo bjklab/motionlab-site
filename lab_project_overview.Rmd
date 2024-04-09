@@ -6,7 +6,7 @@ favicon: microscope_white.png
 
 
  
-```{r project_pipeline, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, layout="l-body-outset", fig.align='center', fig.width=6}
+```{r project_pipeline, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, layout="l-screen-inset", fig.align='center', fig.width=6}
 
 #' #################################
 #' load libraries and set seed
@@ -28,9 +28,17 @@ read_csv(file = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_2-GKnR34K_O-
 motion_lab_projects |> 
   write_csv("discussion_topics/motion_lab_projects.csv")
 
+read_csv("discussion_topics/motion_lab_tasks.csv") |> 
+  identity() -> motion_lab_tasks
+
 motion_lab_projects |> 
   pivot_longer(cols = everything(), names_to = "project_stage", values_to = "projects") |> 
-  filter(!is.na(projects)) |> 
+  filter(!is.na(projects)) |>
+  # left_join(motion_lab_tasks, by = "projects") |> 
+  # rowwise() |> 
+  # mutate(projects = ifelse(is.na(task_link), projects, glue::glue("[{projects}]({task_link})"))) |> 
+  # ungroup() |> 
+  # select(-task_link) |> 
   group_by(project_stage) |> 
   nest() |> 
   summarise(project_list = map2_chr(.x = project_stage, .y = data, .f = ~ paste0("<b>", .x, "</b><br>", paste(pull(.y, projects), collapse = "<br>")))) |> 
@@ -39,7 +47,7 @@ motion_lab_projects |>
          y_coord = rep(15)) |> 
   mutate(x_coord_end = lead(x_coord, 1)) |> 
   mutate(fill_color = viridis::turbo(4)[x_coord],
-         fill_color = colorspace::lighten(fill_color, 0.5)) |> 
+         fill_color = colorspace::lighten(fill_color, 0.8)) |> 
   identity() -> projects_polar
 
 
@@ -67,12 +75,16 @@ p_projects_polar |>
 p_projects_polar |> 
   ggsave(plot = _, filename = "discussion_topics/p_projects_polar.svg", height = 6, width = 8, units = "in")
 
+#p_projects_polar
+
 
 ```
 
 
-```{r fig_projects_polar, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, autodep=TRUE, fig.align='center', out.width='90%'}
-knitr::include_graphics(path = "discussion_topics/p_projects_polar.svg")
+```{r fig_projects_polar, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, autodep=TRUE, fig.align='center', layout="l-screen-inset"}
+
+knitr::include_graphics(path = "discussion_topics/p_projects_polar.png")
+
 ```
 
 <br>    

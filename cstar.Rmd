@@ -22,21 +22,21 @@ C-STAR collaborators are encouraged to utilize the motion lab biorepository to a
   
 #### Biospecimens Obtained from Human Subjects at High Risk for Antimicrobial Resistant Infections  
   
-<iframe src="data_cstar/p_cstar_lv_raw_specimen_totals.html" width=900 height=500 style="border: 0; box-shadow: 5px 5px 56px 0px rgba(0,0,0,0.25);"></iframe>  
+<iframe src="data_cstar/p_cstar_lv_raw_specimen_totals.html" width=900 height=500 style="border: 0; box-shadow: 5px 5px 56px 0px rgba(0,0,0,0.25);" class="l-page"></iframe>  
 
 <br>  
 
 
 #### Microbial DNA Extracted from Human Biospecimens  
   
-<iframe src="data_cstar/p_cstar_lv_dna_specimen_totals.html" width=900 height=500 style="border: 0; box-shadow: 5px 5px 56px 0px rgba(0,0,0,0.25);"></iframe>  
+<iframe src="data_cstar/p_cstar_lv_dna_specimen_totals.html" width=900 height=500 style="border: 0; box-shadow: 5px 5px 56px 0px rgba(0,0,0,0.25);" class="l-page"></iframe>  
 
 <br>  
 
 
 #### Cultured Bacterial Strains with Phenotypic Antimicrobial Resistance  
   
-<iframe src="data_cstar/p_cstar_lv_cx_totals.html" width=800 height=600 style="border: 0; box-shadow: 5px 5px 56px 0px rgba(0,0,0,0.25);"></iframe>  
+<iframe src="data_cstar/p_cstar_lv_cx_totals.html" width=800 height=600 style="border: 0; box-shadow: 5px 5px 56px 0px rgba(0,0,0,0.25);" class="l-page"></iframe>  
 
 
 
