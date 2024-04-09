@@ -16,6 +16,8 @@ library(ggtext)
 library(viridis)
 library(colorspace)
 library(svglite)
+library(gt)
+library(gtExtras)
 
 
 #' #################################
@@ -34,11 +36,6 @@ read_csv("discussion_topics/motion_lab_tasks.csv") |>
 motion_lab_projects |> 
   pivot_longer(cols = everything(), names_to = "project_stage", values_to = "projects") |> 
   filter(!is.na(projects)) |>
-  # left_join(motion_lab_tasks, by = "projects") |> 
-  # rowwise() |> 
-  # mutate(projects = ifelse(is.na(task_link), projects, glue::glue("[{projects}]({task_link})"))) |> 
-  # ungroup() |> 
-  # select(-task_link) |> 
   group_by(project_stage) |> 
   nest() |> 
   summarise(project_list = map2_chr(.x = project_stage, .y = data, .f = ~ paste0("<b>", .x, "</b><br>", paste(pull(.y, projects), collapse = "<br>")))) |> 
@@ -90,3 +87,35 @@ knitr::include_graphics(path = "discussion_topics/p_projects_polar.png")
 <br>    
   
 
+```{r project_links, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, layout="l-body", fig.align='center', fig.width=6}
+
+motion_lab_projects |> 
+  pivot_longer(cols = everything(), names_to = "project_stage", values_to = "projects") |> 
+  filter(!is.na(projects)) |>
+  left_join(motion_lab_tasks, by = "projects") |> 
+  rowwise() |> 
+  mutate(projects = ifelse(is.na(task_link), projects, glue::glue("[{projects}]({task_link})"))) |> 
+  ungroup() |> 
+  select(-task_link) |>
+  mutate(project_stage = factor(project_stage, levels = c("Prep & Regulatory", "Specimen & Data Collection", "Analysis & Writing", "Revision & Resubmission"))) |> 
+  rename(`Project Stage` = project_stage, `Project` = projects) |> 
+  identity() -> motion_lab_projects_linked
+
+motion_lab_projects_linked |>  
+  arrange(`Project Stage`, Project) |> 
+  gt() |> 
+  gt::fmt_markdown(Project) |> 
+  gt::sub_missing() |> 
+  gtExtras::gt_theme_538() |> 
+  gt::data_color(columns = `Project Stage`,
+                 method = "factor",
+                 palette = viridis::mako(n = n_distinct(motion_lab_projects_linked$`Project Stage`), alpha = 1),
+                 domain = NULL,
+                 reverse = TRUE
+  )
+
+
+```
+
+
+<br>
