@@ -109,9 +109,9 @@ motion_lab_projects_linked |>
   gtExtras::gt_theme_538() |> 
   gt::data_color(columns = `Project Stage`,
                  method = "factor",
-                 palette = viridis::mako(n = n_distinct(motion_lab_projects_linked$`Project Stage`), alpha = 1),
+                 palette = colorspace::lighten(viridis::turbo(4), 0.8),
                  domain = NULL,
-                 reverse = TRUE
+                 reverse = FALSE
   )
 
 
