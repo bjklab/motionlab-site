@@ -39,6 +39,8 @@ navbar:
           href: orders_and_inventory.html
         - text: "Protocol Library"
           href: protocols.html
+        - text: "Timer ↗"
+          href: https://bjklab.github.io/html-timer/timer.html
         - text: "University Training"
           href: training.html
     - text: "Projects"
