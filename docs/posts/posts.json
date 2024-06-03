@@ -13,7 +13,7 @@
     "categories": [],
     "contents": "\nWelcome to the MOTION Lab! We study human and environmental microbiomes to better understand microbial transmission. Our primary focus is on the transmission of antibiotic-resistant bacteria, and we serve as the laboratory core for the University of Pennsylvania’s Center for the Study of Antibiotic Resistance (C-STAR). A second focus is understanding the mechanism – and improving the efficacy – of novel microbial therapeutics, like fecal microbiota transplant (FMT) and live biotherapeutic products (LBPs), which depend on microbial transfer for success. To characterize microbial communities, we use a wide range of measurement strategies, including amplicon, metagenomic, and whole-genome sequencing, as well as culturomics. We have developed novel Bayesian modeling approaches to trace microbes as they move between human hosts, the environment, and even other host species. During the COVID-19 pandemic, we developed similar approaches to understand SARS-CoV-2 transmission dynamics.\n\n\n\n",
     "preview": "posts/2023-12-20-welcome-to-the-motion-lab/p_logo_microbiome_transmission_lab.png",
-    "last_modified": "2024-04-01T22:56:22-04:00",
+    "last_modified": "2024-01-30T10:23:51-05:00",
     "input_file": {},
     "preview_width": 2700,
     "preview_height": 1800
