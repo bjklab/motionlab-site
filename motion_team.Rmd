@@ -104,6 +104,49 @@ members |>
 :::
 
 
+### Summer Members  
+
+```{r summer, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE}
+
+motion_bios |> 
+  arrange(desc(role), your_last_name) |> 
+  filter(role %in% c("summer")) |> 
+  select(headshot_path_webp, biography) |> 
+  distinct() |> 
+  gt() |> 
+  #gt::cols_label(headshot_path_webp = "", biography = "") |> 
+  gt::tab_options(column_labels.hidden = TRUE) |> 
+  gt::cols_align(align = "center", columns = headshot_path_webp) |> 
+  gt::cols_align(align = "left", columns = biography) |> 
+  gt::fmt_markdown(biography) |> 
+  gt::cols_width(headshot_path_webp ~ px(300)) |> 
+  gtExtras::gt_img_rows(columns = headshot_path_webp, img_source = "local", height = 200) |> 
+  #gtExtras::gt_theme_538()
+  gtExtras::gt_theme_guardian() |> 
+  gt::opt_table_outline(style = "solid", width = px(3), color = "#FFFFFF") |> 
+  identity() -> summer
+
+summer |> 
+  gtsave("people/summer.html", inline_css = TRUE)
+
+
+```
+
+::: {#summer}
+
+```{r, echo=FALSE, results='asis'}
+
+#htmltools::includeHTML('people/partners.html')
+
+summer |> 
+  as_raw_html(inline_css = TRUE)
+
+```
+
+:::
+
+
+
 ### Lab Partners  
 
 ```{r partners, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE}
@@ -127,7 +170,7 @@ motion_bios |>
   identity() -> partners
 
 partners |> 
-  gtsave("people/members.html", inline_css = TRUE)
+  gtsave("people/partners.html", inline_css = TRUE)
 
 
 ```
@@ -139,6 +182,48 @@ partners |>
 #htmltools::includeHTML('people/partners.html')
 
 partners |> 
+  as_raw_html(inline_css = TRUE)
+
+```
+
+:::
+
+
+### Lab Alumni  
+
+```{r alumni, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE}
+
+motion_bios |> 
+  arrange(desc(role), your_last_name) |> 
+  filter(role %in% c("alumni")) |> 
+  select(headshot_path_webp, biography) |> 
+  distinct() |> 
+  gt() |> 
+  #gt::cols_label(headshot_path_webp = "", biography = "") |> 
+  gt::tab_options(column_labels.hidden = TRUE) |> 
+  gt::cols_align(align = "center", columns = headshot_path_webp) |> 
+  gt::cols_align(align = "left", columns = biography) |> 
+  gt::fmt_markdown(biography) |> 
+  gt::cols_width(headshot_path_webp ~ px(300)) |> 
+  gtExtras::gt_img_rows(columns = headshot_path_webp, img_source = "local", height = 200) |> 
+  #gtExtras::gt_theme_538()
+  gtExtras::gt_theme_guardian() |> 
+  gt::opt_table_outline(style = "solid", width = px(3), color = "#FFFFFF") |> 
+  identity() -> alumni
+
+alumni |> 
+  gtsave("people/alumni.html", inline_css = TRUE)
+
+
+```
+
+::: {#alumni}
+
+```{r, echo=FALSE, results='asis'}
+
+#htmltools::includeHTML('people/partners.html')
+
+alumni |> 
   as_raw_html(inline_css = TRUE)
 
 ```
