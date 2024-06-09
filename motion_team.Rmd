@@ -104,7 +104,7 @@ members |>
 :::
 
 
-### Summer Members  
+`r if("summer" %in% motion_bios$role){"### Summer Members"}`  
 
 ```{r summer, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE}
 
