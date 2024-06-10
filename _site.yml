@@ -51,6 +51,8 @@ navbar:
           href: dashboards.html
         - text: "Development"
           href: lab_project_overview.html
+        - text: "FACE-MDRO"
+          href: project_reports/facemdro_screening_report.html
     - text: "Papers"
       menu: 
         - text: "Publications"
