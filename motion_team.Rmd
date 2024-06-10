@@ -94,7 +94,7 @@ motion_people |>
   mutate(your_pronouns = tolower(your_pronouns)) |> 
   mutate(your_middle_initial = ifelse(is.na(your_middle_initial), NA, paste0(gsub("\\.","",your_middle_initial),"."))) |> 
   mutate(your_website = ifelse(is.na(your_website), NA, glue("Additional information can be found <a href='{your_website}'>here</a>."))) |> 
-  mutate(biography = glue("<b>{your_first_name} {your_middle_initial} {your_last_name} was {your_title} in our lab.", .na = "")) |>
+  mutate(biography = glue("<b>{your_first_name} {your_middle_initial} {your_last_name}</b> was a {your_title} in our lab.", .na = "")) |>
   mutate(headshot_path = paste0("./people/headshots/",your_photo)) |> 
   mutate(headshot_path_webp = gsub(pattern = "jpg|jpeg|png|PNG|jpeg|JPG","webp",headshot_path)) |> 
   select(headshot_path, headshot_path_webp, biography, role, your_last_name) |> 
