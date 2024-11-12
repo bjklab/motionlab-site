@@ -17,7 +17,7 @@ Corynebacterium,10,SOTDDI,Anesi,9
 Cutibacterium,3,SOTDDI,Anesi,3
 Enterobacter,177,ARLG_SOT,Anesi,8
 Enterobacter,177,CRE,Anesi,65
-Enterobacter,177,FACEMDRO,NA,1
+Enterobacter,177,FACEMDRO,Kelly,1
 Enterobacter,177,ICEMAN,Ziegler,27
 Enterobacter,177,INTEGRATE,Lautenbach,40
 Enterobacter,177,MERLIN,Lautenbach,8
@@ -45,7 +45,7 @@ Morganella,13,CRE,Anesi,5
 Morganella,13,ICEMAN,Ziegler,8
 Proteus,16,ARLG_SOT,Anesi,2
 Proteus,16,CRE,Anesi,7
-Proteus,16,FACEMDRO,NA,1
+Proteus,16,FACEMDRO,Kelly,1
 Proteus,16,ICEMAN,Ziegler,2
 Proteus,16,SOTDDI,Anesi,4
 Providencia,32,CRE,Anesi,25
