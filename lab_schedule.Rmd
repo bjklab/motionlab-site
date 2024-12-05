@@ -1,7 +1,7 @@
 ---
 title: "Lab Meeting Schedule"
 site: distill::distill_website
-favicon: microscope_white.png
+#favicon: microscope_white.png
 ---
 
 Meetings are held at 4pm on Tuesdays, in Johnson Pavilion 501.  

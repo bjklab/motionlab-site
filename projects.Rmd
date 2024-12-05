@@ -6,7 +6,7 @@ output:
     anchor_sections: FALSE
     css: [theme_inferno_black.css, background_grad.css]
 site: distill::distill_website
-favicon: microscope_white.png
+#favicon: microscope_white.png
 ---
 
 ```{r, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, fig.align='center', out.width='90%', fig.retina=2}
