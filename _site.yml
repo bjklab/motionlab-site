@@ -5,7 +5,7 @@ description: |
 #output_dir: "_site"
 output_dir: "docs"
 base_url: https://bjklab.github.io/motionlab-site/index.html
-favicon: transparency.svg
+favicon: transparency_mako.svg
 google_analytics: "G-VSFKQ6K4MK"
 navbar:
   # logo:
