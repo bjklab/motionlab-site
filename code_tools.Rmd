@@ -1,0 +1,91 @@
+---
+title: "Code Tools"
+output:
+  distill::distill_article:
+    self_contained: false
+    anchor_sections: FALSE
+    css: [theme_inferno_black.css]
+site: distill::distill_website
+#favicon: transparency.svg
+---
+
+```{r, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE}
+
+knitr::opts_chunk$set(echo = FALSE)
+
+```
+  
+### R        
+  
+#### Installing R from Source    
+  
+The following guide is derived from ![a Posit guide to installing R from source](https://docs.posit.co/resources/install-r-source.html) and is tailored to Debian/Ubuntu distributions of Linux: 
+
+- Add dependencies (build-essential, cmake, BLAS, Fortran, LApack, bzip2, header libraries):  
+
+- Prepare additional dependencies:  
+
+```{bash prep_R_source, eval=FALSE, warning=FALSE, message=FALSE, echo=FALSE, layout="l-body-outset", fig.width=6}
+
+sudo sed -i.bak "/^#.*deb-src.*universe$/s/^# //g" /etc/apt/sources.list
+sudo apt update
+sudo apt build-dep r-base
+
+```
+
+- Set target R version:  
+
+```{bash set_R_version, eval=FALSE, warning=FALSE, message=FALSE, echo=FALSE, layout="l-body-outset", fig.width=6}
+
+export R_VERSION=4.4.1
+
+```
+
+- Download R target: 
+
+```{bash download_R_version, eval=FALSE, warning=FALSE, message=FALSE, echo=FALSE, layout="l-body-outset", fig.width=6}
+
+curl -O https://cran.rstudio.com/src/base/R-4/R-${R_VERSION}.tar.gz
+tar -xzvf R-${R_VERSION}.tar.gz
+cd R-${R_VERSION}
+
+```
+
+- Build R: 
+
+```{bash build_R_version, eval=FALSE, warning=FALSE, message=FALSE, echo=FALSE, layout="l-body-outset", fig.width=6}
+
+./configure \
+  --prefix=/opt/R/${R_VERSION} \
+  --enable-R-shlib \
+  --enable-memory-profiling \
+  --with-blas \
+  --with-lapack
+
+make
+sudo make install
+
+```
+
+- Set R symlinks: 
+
+```{bash set_R_version, eval=FALSE, warning=FALSE, message=FALSE, echo=FALSE, layout="l-body-outset", fig.width=6}
+
+/opt/R/${R_VERSION}/bin/R --version
+
+sudo ln -s -f /opt/R/${R_VERSION}/bin/R /usr/local/bin/R
+sudo ln -s -f /opt/R/${R_VERSION}/bin/Rscript /usr/local/bin/Rscript
+
+
+```
+
+
+
+
+ <br>
+
+ <br>
+
+ <br>
+
+ 
