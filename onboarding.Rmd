@@ -76,6 +76,12 @@ motion_onboarding_md |>
 
 ```
   
+<br>
+
+### Additional Resources for Coding        
+
+[motion lab coding tools](code_tools.html)
+
  <br>
 
  <br>

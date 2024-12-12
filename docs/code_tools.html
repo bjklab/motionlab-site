@@ -86,27 +86,27 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>motion lab: Project Development</title>
+  <title>motion lab: Code Tools</title>
   
   
   <link rel="icon" type="image/svg+xml" href="transparency_mako.svg"/>
   
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="motion lab: Project Development"/>
+  <meta property="og:title" content="motion lab: Code Tools"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="motion lab"/>
   
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="motion lab: Project Development"/>
+  <meta property="twitter:title" content="motion lab: Code Tools"/>
   
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","site"]}},"value":[{"type":"character","attributes":{},"value":["Project Development"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","output","site"]}},"value":[{"type":"character","attributes":{},"value":["Code Tools"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","anchor_sections","css"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["theme_inferno_black.css"]}]}]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2187,6 +2187,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
   <!--/radix_placeholder_site_in_header-->
 
+  <link rel="stylesheet" href="theme_inferno_black.css" type="text/css"/>
 
 </head>
 
@@ -2195,7 +2196,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Project Development","authors":[]}
+{"title":"Code Tools","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2268,7 +2269,7 @@ Papers
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Project Development</h1>
+<h1>Code Tools</h1>
 
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
@@ -2277,541 +2278,45 @@ Papers
 
 
 <div class="d-article">
-<div class="layout-chunk" data-layout="l-screen-inset">
+<div class="layout-chunk" data-layout="l-body">
 
 </div>
-<div class="layout-chunk" data-layout="l-screen-inset">
-<p><img src="discussion_topics/p_projects_polar.png" width="2400" style="display: block; margin: auto;" /></p>
+<h3 id="r">R</h3>
+<h4 id="installing-r-from-source">Installing R from Source</h4>
+<p>The following guide is derived from <a href="https://docs.posit.co/resources/install-r-source.html">a Posit guide to installing R from source</a> and is tailored to Debian/Ubuntu distributions of Linux:</p>
+<ul>
+<li><p>Add dependencies (build-essential, cmake, BLAS, Fortran, LApack, bzip2, header libraries):</p></li>
+<li><p>Prepare additional dependencies:</p></li>
+</ul>
+<div class="layout-chunk" data-layout="l-body-outset">
+
+</div>
+<ul>
+<li>Set target R version:</li>
+</ul>
+<div class="layout-chunk" data-layout="l-body-outset">
+
+</div>
+<ul>
+<li>Download R target:</li>
+</ul>
+<div class="layout-chunk" data-layout="l-body-outset">
+
+</div>
+<ul>
+<li>Build R:</li>
+</ul>
+<div class="layout-chunk" data-layout="l-body-outset">
+
+</div>
+<ul>
+<li>Set R symlinks:</li>
+</ul>
+<div class="layout-chunk" data-layout="l-body-outset">
+
 </div>
 <p><br></p>
-<div class="layout-chunk" data-layout="l-body">
-<div id="pomgruewfl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cairo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#pomgruewfl table {
-  font-family: Cairo, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#pomgruewfl thead, #pomgruewfl tbody, #pomgruewfl tfoot, #pomgruewfl tr, #pomgruewfl td, #pomgruewfl th {
-  border-style: none;
-}
-
-#pomgruewfl p {
-  margin: 0;
-  padding: 0;
-}
-
-#pomgruewfl .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: 400;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: none;
-  border-top-width: 3px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#pomgruewfl .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#pomgruewfl .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#pomgruewfl .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#pomgruewfl .gt_heading {
-  background-color: #FFFFFF;
-  text-align: left;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#pomgruewfl .gt_bottom_border {
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#pomgruewfl .gt_col_headings {
-  border-top-style: none;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #000000;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#pomgruewfl .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#pomgruewfl .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#pomgruewfl .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#pomgruewfl .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#pomgruewfl .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #000000;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#pomgruewfl .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#pomgruewfl .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: none;
-  border-top-width: 2px;
-  border-top-color: #000000;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#pomgruewfl .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: none;
-  border-top-width: 2px;
-  border-top-color: #000000;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: #FFFFFF;
-  vertical-align: middle;
-}
-
-#pomgruewfl .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#pomgruewfl .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#pomgruewfl .gt_row {
-  padding-top: 3px;
-  padding-bottom: 3px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#pomgruewfl .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 0px;
-  border-right-color: #FFFFFF;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#pomgruewfl .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#pomgruewfl .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#pomgruewfl .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#pomgruewfl .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#pomgruewfl .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#pomgruewfl .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#pomgruewfl .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#pomgruewfl .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#pomgruewfl .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#pomgruewfl .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#pomgruewfl .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#pomgruewfl .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#pomgruewfl .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#pomgruewfl .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#pomgruewfl .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#pomgruewfl .gt_sourcenote {
-  font-size: 12px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#pomgruewfl .gt_left {
-  text-align: left;
-}
-
-#pomgruewfl .gt_center {
-  text-align: center;
-}
-
-#pomgruewfl .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#pomgruewfl .gt_font_normal {
-  font-weight: normal;
-}
-
-#pomgruewfl .gt_font_bold {
-  font-weight: bold;
-}
-
-#pomgruewfl .gt_font_italic {
-  font-style: italic;
-}
-
-#pomgruewfl .gt_super {
-  font-size: 65%;
-}
-
-#pomgruewfl .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#pomgruewfl .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#pomgruewfl .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#pomgruewfl .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#pomgruewfl .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#pomgruewfl .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#pomgruewfl .gt_indent_5 {
-  text-indent: 25px;
-}
-
-#pomgruewfl .katex-display {
-  display: inline-flex !important;
-  margin-bottom: 0.75em !important;
-}
-
-#pomgruewfl div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
-  height: 0px !important;
-}
-
-tbody tr:last-child {
-  border-bottom: 2px solid #ffffff00;
-}
-</style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: Chivo; font-size: 14px; vertical-align: bottom; font-weight: 200; text-transform: uppercase;" scope="col" id="Project-Stage">Project Stage</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: Chivo; font-size: 14px; vertical-align: bottom; font-weight: 200; text-transform: uppercase;" scope="col" id="Project">Project</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="Project Stage" class="gt_row gt_center" style="background-color: #D8C7E1; color: #000000;">Prep &amp; Regulatory</td>
-<td headers="Project" class="gt_row gt_left"><span class='gt_from_md'>TREASURE2</span></td></tr>
-    <tr><td headers="Project Stage" class="gt_row gt_center" style="background-color: #D8C7E1; color: #000000;">Prep &amp; Regulatory</td>
-<td headers="Project" class="gt_row gt_left"><span class='gt_from_md'><a href="https://github.com/orgs/microbiome-transmission-lab/projects/2">FACE-MDRO</a></span></td></tr>
-    <tr><td headers="Project Stage" class="gt_row gt_center" style="background-color: #D8C7E1; color: #000000;">Prep &amp; Regulatory</td>
-<td headers="Project" class="gt_row gt_left"><span class='gt_from_md'><a href="https://github.com/orgs/microbiome-transmission-lab/projects/4">NEXUS</a></span></td></tr>
-    <tr><td headers="Project Stage" class="gt_row gt_center" style="background-color: #D8C7E1; color: #000000;">Prep &amp; Regulatory</td>
-<td headers="Project" class="gt_row gt_left"><span class='gt_from_md'><a href="https://github.com/orgs/microbiome-transmission-lab/projects/3">mVACS-PRO</a></span></td></tr>
-    <tr><td headers="Project Stage" class="gt_row gt_center" style="background-color: #CDFFED; color: #000000;">Specimen &amp; Data Collection</td>
-<td headers="Project" class="gt_row gt_left"><span class='gt_from_md'>ALCHEMY</span></td></tr>
-    <tr><td headers="Project Stage" class="gt_row gt_center" style="background-color: #CDFFED; color: #000000;">Specimen &amp; Data Collection</td>
-<td headers="Project" class="gt_row gt_left"><span class='gt_from_md'>IMPALA</span></td></tr>
-    <tr><td headers="Project Stage" class="gt_row gt_center" style="background-color: #CDFFED; color: #000000;">Specimen &amp; Data Collection</td>
-<td headers="Project" class="gt_row gt_left"><span class='gt_from_md'>PREDICT</span></td></tr>
-    <tr><td headers="Project Stage" class="gt_row gt_center" style="background-color: #CDFFED; color: #000000;">Specimen &amp; Data Collection</td>
-<td headers="Project" class="gt_row gt_left"><span class='gt_from_md'>SBR</span></td></tr>
-    <tr><td headers="Project Stage" class="gt_row gt_center" style="background-color: #CDFFED; color: #000000;">Specimen &amp; Data Collection</td>
-<td headers="Project" class="gt_row gt_left"><span class='gt_from_md'><a href="https://github.com/orgs/microbiome-transmission-lab/projects/6">INTEGRATE</a></span></td></tr>
-    <tr><td headers="Project Stage" class="gt_row gt_center" style="background-color: #CDFFED; color: #000000;">Specimen &amp; Data Collection</td>
-<td headers="Project" class="gt_row gt_left"><span class='gt_from_md'><a href="https://github.com/orgs/microbiome-transmission-lab/projects/7">SPACEMAN</a></span></td></tr>
-    <tr><td headers="Project Stage" class="gt_row gt_center" style="background-color: #CDFFED; color: #000000;">Specimen &amp; Data Collection</td>
-<td headers="Project" class="gt_row gt_left"><span class='gt_from_md'><a href="https://github.com/orgs/microbiome-transmission-lab/projects/5">mVACS</a></span></td></tr>
-    <tr><td headers="Project Stage" class="gt_row gt_center" style="background-color: #FFF1E2; color: #000000;">Analysis &amp; Writing</td>
-<td headers="Project" class="gt_row gt_left"><span class='gt_from_md'>ABOUT-COVID</span></td></tr>
-    <tr><td headers="Project Stage" class="gt_row gt_center" style="background-color: #FFF1E2; color: #000000;">Analysis &amp; Writing</td>
-<td headers="Project" class="gt_row gt_left"><span class='gt_from_md'>ESC</span></td></tr>
-    <tr><td headers="Project Stage" class="gt_row gt_center" style="background-color: #FFF1E2; color: #000000;">Analysis &amp; Writing</td>
-<td headers="Project" class="gt_row gt_left"><span class='gt_from_md'>FMTD</span></td></tr>
-    <tr><td headers="Project Stage" class="gt_row gt_center" style="background-color: #FFF1E2; color: #000000;">Analysis &amp; Writing</td>
-<td headers="Project" class="gt_row gt_left"><span class='gt_from_md'>FMTFI</span></td></tr>
-    <tr><td headers="Project Stage" class="gt_row gt_center" style="background-color: #FFF1E2; color: #000000;">Analysis &amp; Writing</td>
-<td headers="Project" class="gt_row gt_left"><span class='gt_from_md'>FMTSCDI</span></td></tr>
-    <tr><td headers="Project Stage" class="gt_row gt_center" style="background-color: #FFF1E2; color: #000000;">Analysis &amp; Writing</td>
-<td headers="Project" class="gt_row gt_left"><span class='gt_from_md'>ICEMAN</span></td></tr>
-    <tr><td headers="Project Stage" class="gt_row gt_center" style="background-color: #FFF1E2; color: #000000;">Analysis &amp; Writing</td>
-<td headers="Project" class="gt_row gt_left"><span class='gt_from_md'>MERLIN</span></td></tr>
-    <tr><td headers="Project Stage" class="gt_row gt_center" style="background-color: #FFF1E2; color: #000000;">Analysis &amp; Writing</td>
-<td headers="Project" class="gt_row gt_left"><span class='gt_from_md'>MUSIC</span></td></tr>
-    <tr><td headers="Project Stage" class="gt_row gt_center" style="background-color: #FFF1E2; color: #000000;">Analysis &amp; Writing</td>
-<td headers="Project" class="gt_row gt_left"><span class='gt_from_md'>STOPCDI</span></td></tr>
-    <tr><td headers="Project Stage" class="gt_row gt_center" style="background-color: #FFF1E2; color: #000000;">Analysis &amp; Writing</td>
-<td headers="Project" class="gt_row gt_left"><span class='gt_from_md'>TREASURE1</span></td></tr>
-    <tr><td headers="Project Stage" class="gt_row gt_center" style="background-color: #FFC6C6; color: #000000;">Revision &amp; Resubmission</td>
-<td headers="Project" class="gt_row gt_left"><span class='gt_from_md'>REBEL</span></td></tr>
-    <tr><td headers="Project Stage" class="gt_row gt_center" style="background-color: #FFC6C6; color: #000000;">Revision &amp; Resubmission</td>
-<td headers="Project" class="gt_row gt_left"><span class='gt_from_md'>SpikeSample</span></td></tr>
-    <tr><td headers="Project Stage" class="gt_row gt_center" style="background-color: #FFC6C6; color: #000000;">Revision &amp; Resubmission</td>
-<td headers="Project" class="gt_row gt_left"><span class='gt_from_md'>TECTONIC</span></td></tr>
-    <tr><td headers="Project Stage" class="gt_row gt_center" style="background-color: #FFC6C6; color: #000000;">Revision &amp; Resubmission</td>
-<td headers="Project" class="gt_row gt_left"><span class='gt_from_md'>metaKT</span></td></tr>
-    <tr><td headers="Project Stage" class="gt_row gt_center" style="background-color: #FFC6C6; color: #000000;">Revision &amp; Resubmission</td>
-<td headers="Project" class="gt_row gt_left"><span class='gt_from_md'>metabreath</span></td></tr>
-    <tr><td headers="Project Stage" class="gt_row gt_center" style="background-color: #FFC6C6; color: #000000;">Revision &amp; Resubmission</td>
-<td headers="Project" class="gt_row gt_left"><span class='gt_from_md'>phyloCDIage</span></td></tr>
-    <tr><td headers="Project Stage" class="gt_row gt_center" style="background-color: #FFC6C6; color: #000000;">Revision &amp; Resubmission</td>
-<td headers="Project" class="gt_row gt_left"><span class='gt_from_md'>phyloCDIcdtB</span></td></tr>
-  </tbody>
-  
-  
-</table>
-</div>
-</div>
+<p><br></p>
 <p><br></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
