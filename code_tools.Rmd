@@ -26,35 +26,28 @@ The following guide is derived from [a Posit guide to installing R from source](
 - Prepare additional dependencies:  
 
 ```{bash, echo = TRUE, eval=FALSE}
-
 sudo sed -i.bak "/^#.*deb-src.*universe$/s/^# //g" /etc/apt/sources.list
 sudo apt update
 sudo apt build-dep r-base
-
 ```
 
 - Set target R version:  
 
 ```{bash, echo = TRUE, eval=FALSE}
-
 export R_VERSION=4.4.1
-
 ```
 
 - Download R target: 
 
 ```{bash, echo = TRUE, eval=FALSE}
-
 curl -O https://cran.rstudio.com/src/base/R-4/R-${R_VERSION}.tar.gz
 tar -xzvf R-${R_VERSION}.tar.gz
 cd R-${R_VERSION}
-
 ```
 
 - Build R: 
 
 ```{bash, echo = TRUE, eval=FALSE}
-
 ./configure \
   --prefix=/opt/R/${R_VERSION} \
   --enable-R-shlib \
@@ -64,19 +57,15 @@ cd R-${R_VERSION}
 
 make
 sudo make install
-
 ```
 
 - Set R symlinks: 
 
 ```{bash, echo = TRUE, eval=FALSE}
-
 /opt/R/${R_VERSION}/bin/R --version
 
 sudo ln -s -f /opt/R/${R_VERSION}/bin/R /usr/local/bin/R
 sudo ln -s -f /opt/R/${R_VERSION}/bin/Rscript /usr/local/bin/Rscript
-
-
 ```
 
 
