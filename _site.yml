@@ -19,6 +19,8 @@ navbar:
       href: motion_team.html
     - text: "Resources"
       menu: 
+        - text: "Chalkboard ↗"
+          href: https://bjklab.github.io/chalkboard-quarto/chalkboard.html
         - text: "Code Library ↗"
           href: https://github.com/orgs/microbiome-transmission-lab/repositories
         - text: "C-STAR Biorepository"
@@ -45,6 +47,8 @@ navbar:
           href: training.html
         - text: "UPHS Dashboard ↗"
           href: https://app.powerbi.com/groups/me/apps/8a6eddfe-5642-4d29-92cb-ca44e5113b1b/reports/81a1caa8-2b3d-423c-8bec-6444e8e23e1e/ReportSection91bb230832559601938d?experience=power-bi
+        - text: "Whiteboard ↗"
+          href: https://bjklab.github.io/chalkboard-quarto/whiteboard.html
     - text: "Projects"
       menu: 
         - text: "Descriptions"
