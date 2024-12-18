@@ -21,7 +21,11 @@ knitr::opts_chunk$set(echo = FALSE)
   
 The following guide is derived from [a Posit guide to installing R from source](https://docs.posit.co/resources/install-r-source.html) and is tailored to Debian/Ubuntu distributions of Linux: 
 
-- Add dependencies (build-essential, cmake, BLAS, Fortran, LApack, bzip2, header libraries):  
+- Add dependencies (build-essential, cmake, blas, Fortran, lapack, bzip2, readline, cairo, pandoc, git and other libraries):  
+
+```{bash, echo = TRUE, eval=FALSE}
+sudo apt install build-essential cmake libblas-dev gfortran liblapack-dev bzip2 libbz2-dev libreadline-dev libcairo-dev pandoc git libgit2-dev
+```
 
 - Prepare additional dependencies:  
 
@@ -68,13 +72,23 @@ sudo ln -s -f /opt/R/${R_VERSION}/bin/R /usr/local/bin/R
 sudo ln -s -f /opt/R/${R_VERSION}/bin/Rscript /usr/local/bin/Rscript
 ```
 
+<br>
+
+#### Managing R Packages      
+
+We recommend using the [pak](https://pak.r-lib.org/) package to manage R packages. It provides more explicit reporting of dependences:  
+
+```{R, echo = TRUE, eval=FALSE}
+install.packages('pak')
+pak::pkg_install('tidyverse')
+```
 
 
 
- <br>
+<br>
 
- <br>
+<br>
 
- <br>
+<br>
 
  

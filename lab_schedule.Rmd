@@ -36,7 +36,8 @@ motion_lab_schedule |>
   gt::sub_missing() |> 
   gtExtras::gt_theme_538() |> 
   gtExtras::gt_highlight_rows(rows = Focus == "ASPIRE-MOTION Joint Meeting", fill = "lightgrey", target_col = "Focus", font_weight = "normal") |> 
-  gtExtras::gt_highlight_rows(rows = Focus == "Environment-MOTION Joint Meeting", fill = "grey24", font_color = "white", target_col = "Focus", font_weight = "normal")
+  gtExtras::gt_highlight_rows(rows = Focus == "Environment-MOTION Joint Meeting", fill = "grey24", font_color = "white", target_col = "Focus", font_weight = "normal") |> 
+  gtExtras::gt_highlight_rows(rows = Focus == "MOTION WIP", fill = "lightgrey", target_col = "Focus", font_weight = "normal") 
 #   gt_color_rows(
 #     Focus, 
 #     palette = "viridis::turbo", 

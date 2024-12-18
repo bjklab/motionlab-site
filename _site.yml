@@ -5,7 +5,7 @@ description: |
 #output_dir: "_site"
 output_dir: "docs"
 base_url: https://bjklab.github.io/motionlab-site/index.html
-favicon: transparency_mako.svg
+favicon: M4_mako.svg #transparency_mako.svg
 google_analytics: "G-VSFKQ6K4MK"
 navbar:
   # logo:
@@ -43,6 +43,8 @@ navbar:
           href: https://bjklab.github.io/html-timer/timer.html
         - text: "University Training"
           href: training.html
+        - text: "UPHS Dashboard ↗"
+          href: https://app.powerbi.com/groups/me/apps/8a6eddfe-5642-4d29-92cb-ca44e5113b1b/reports/81a1caa8-2b3d-423c-8bec-6444e8e23e1e/ReportSection91bb230832559601938d?experience=power-bi
     - text: "Projects"
       menu: 
         - text: "Descriptions"

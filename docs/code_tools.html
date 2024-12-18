@@ -89,7 +89,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <title>motion lab: Code Tools</title>
   
   
-  <link rel="icon" type="image/svg+xml" href="transparency_mako.svg"/>
+  <link rel="icon" type="image/svg+xml" href="M4_mako.svg"/>
   
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
@@ -2227,6 +2227,7 @@ Resources
 <a href="protocols.html">Protocol Library</a>
 <a href="https://bjklab.github.io/html-timer/timer.html">Timer ↗</a>
 <a href="training.html">University Training</a>
+<a href="https://app.powerbi.com/groups/me/apps/8a6eddfe-5642-4d29-92cb-ca44e5113b1b/reports/81a1caa8-2b3d-423c-8bec-6444e8e23e1e/ReportSection91bb230832559601938d?experience=power-bi">UPHS Dashboard ↗</a>
 </div>
 </div>
 <div class="nav-dropdown">
@@ -2285,55 +2286,69 @@ Papers
 <h4 id="installing-r-from-source">Installing R from Source</h4>
 <p>The following guide is derived from <a href="https://docs.posit.co/resources/install-r-source.html">a Posit guide to installing R from source</a> and is tailored to Debian/Ubuntu distributions of Linux:</p>
 <ul>
-<li><p>Add dependencies (build-essential, cmake, BLAS, Fortran, LApack, bzip2, header libraries):</p></li>
-<li><p>Prepare additional dependencies:</p></li>
+<li>Add dependencies (build-essential, cmake, blas, Fortran, lapack, bzip2, readline, cairo, pandoc, git and other libraries):</li>
 </ul>
 <div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> sed -i.bak <span class="st">&quot;/^#.*deb-src.*universe$/s/^# //g&quot;</span> /etc/apt/sources.list</a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="fu">sudo</span> apt update</a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="fu">sudo</span> apt build-dep r-base</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> apt install build-essential cmake libblas-dev gfortran liblapack-dev bzip2 libbz2-dev libreadline-dev libcairo-dev pandoc git libgit2-dev</a></code></pre></div>
+</div>
+<ul>
+<li>Prepare additional dependencies:</li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">sudo</span> sed -i.bak <span class="st">&quot;/^#.*deb-src.*universe$/s/^# //g&quot;</span> /etc/apt/sources.list</a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="fu">sudo</span> apt update</a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="fu">sudo</span> apt build-dep r-base</a></code></pre></div>
 </div>
 <ul>
 <li>Set target R version:</li>
 </ul>
 <div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="bu">export</span> <span class="va">R_VERSION=</span>4.4.1</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="bu">export</span> <span class="va">R_VERSION=</span>4.4.1</a></code></pre></div>
 </div>
 <ul>
 <li>Download R target:</li>
 </ul>
 <div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="ex">curl</span> -O https://cran.rstudio.com/src/base/R-4/R-<span class="va">${R_VERSION}</span>.tar.gz</a>
-<a class="sourceLine" id="cb3-2" title="2"><span class="fu">tar</span> -xzvf R-<span class="va">${R_VERSION}</span>.tar.gz</a>
-<a class="sourceLine" id="cb3-3" title="3"><span class="bu">cd</span> R-<span class="va">${R_VERSION}</span></a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="ex">curl</span> -O https://cran.rstudio.com/src/base/R-4/R-<span class="va">${R_VERSION}</span>.tar.gz</a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="fu">tar</span> -xzvf R-<span class="va">${R_VERSION}</span>.tar.gz</a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="bu">cd</span> R-<span class="va">${R_VERSION}</span></a></code></pre></div>
 </div>
 <ul>
 <li>Build R:</li>
 </ul>
 <div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="ex">./configure</span> \</a>
-<a class="sourceLine" id="cb4-2" title="2">  --prefix=/opt/R/<span class="va">${R_VERSION}</span> \</a>
-<a class="sourceLine" id="cb4-3" title="3">  --enable-R-shlib \</a>
-<a class="sourceLine" id="cb4-4" title="4">  --enable-memory-profiling \</a>
-<a class="sourceLine" id="cb4-5" title="5">  --with-blas \</a>
-<a class="sourceLine" id="cb4-6" title="6">  --with-lapack</a>
-<a class="sourceLine" id="cb4-7" title="7"></a>
-<a class="sourceLine" id="cb4-8" title="8"><span class="fu">make</span></a>
-<a class="sourceLine" id="cb4-9" title="9"><span class="fu">sudo</span> make install</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="ex">./configure</span> \</a>
+<a class="sourceLine" id="cb5-2" title="2">  --prefix=/opt/R/<span class="va">${R_VERSION}</span> \</a>
+<a class="sourceLine" id="cb5-3" title="3">  --enable-R-shlib \</a>
+<a class="sourceLine" id="cb5-4" title="4">  --enable-memory-profiling \</a>
+<a class="sourceLine" id="cb5-5" title="5">  --with-blas \</a>
+<a class="sourceLine" id="cb5-6" title="6">  --with-lapack</a>
+<a class="sourceLine" id="cb5-7" title="7"></a>
+<a class="sourceLine" id="cb5-8" title="8"><span class="fu">make</span></a>
+<a class="sourceLine" id="cb5-9" title="9"><span class="fu">sudo</span> make install</a></code></pre></div>
 </div>
 <ul>
 <li>Set R symlinks:</li>
 </ul>
 <div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="ex">/opt/R/</span><span class="va">${R_VERSION}</span><span class="ex">/bin/R</span> --version</a>
-<a class="sourceLine" id="cb5-2" title="2"></a>
-<a class="sourceLine" id="cb5-3" title="3"><span class="fu">sudo</span> ln -s -f /opt/R/<span class="va">${R_VERSION}</span>/bin/R /usr/local/bin/R</a>
-<a class="sourceLine" id="cb5-4" title="4"><span class="fu">sudo</span> ln -s -f /opt/R/<span class="va">${R_VERSION}</span>/bin/Rscript /usr/local/bin/Rscript</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="ex">/opt/R/</span><span class="va">${R_VERSION}</span><span class="ex">/bin/R</span> --version</a>
+<a class="sourceLine" id="cb6-2" title="2"></a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="fu">sudo</span> ln -s -f /opt/R/<span class="va">${R_VERSION}</span>/bin/R /usr/local/bin/R</a>
+<a class="sourceLine" id="cb6-4" title="4"><span class="fu">sudo</span> ln -s -f /opt/R/<span class="va">${R_VERSION}</span>/bin/Rscript /usr/local/bin/Rscript</a></code></pre></div>
+</div>
+<p><br></p>
+<h4 id="managing-r-packages">Managing R Packages</h4>
+<p>We recommend using the <a href="https://pak.r-lib.org/">pak</a> package to manage R packages. It provides more explicit reporting of dependences:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages</a></span><span class='op'>(</span><span class='st'>'pak'</span><span class='op'>)</span></span>
+<span><span class='fu'>pak</span><span class='fu'>::</span><span class='fu'>pkg_install</span><span class='op'>(</span><span class='st'>'tidyverse'</span><span class='op'>)</span></span></code></pre>
+</div>
 </div>
 <p><br></p>
 <p><br></p>
 <p><br></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
