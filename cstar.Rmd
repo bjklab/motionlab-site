@@ -17,7 +17,7 @@ knitr::opts_chunk$set(echo = FALSE)
       
 The [Center for the Study of Antimicrobial Resistance (C-STAR)](https://cstar.med.upenn.edu/) brings together experts from across the University of Pennsylvania to create new solutions to the public health threat posed by antimicrobial resistance (AR). The Center includes three primary areas of research focus: (1)  Translational, (2) Global, and (3) Community. The [motion laboratory](https://motionlab.site), directed by Brendan J. Kelly, MD, MS, is proud to serve as the core laboratory for the Translational AR focus.  
   
-C-STAR collaborators are encouraged to utilize the motion lab biorepository to address new research questions and validate findings from pilot studies. Our biorepository includes:  
+C-STAR collaborators are encouraged to utilize the motion lab biorepository to address new research questions and validate findings from pilot studies. Our biorepository (as of `r format(Sys.Date(), '%d %B %Y')`) includes:  
   
   
 #### Biospecimens Obtained from Human Subjects at High Risk for Antimicrobial Resistant Infections  
