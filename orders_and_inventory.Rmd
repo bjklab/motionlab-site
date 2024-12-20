@@ -4,7 +4,7 @@ output:
   distill::distill_article:
     self_contained: false
     anchor_sections: FALSE
-    css: [theme_inferno_black.css, background_grad.css]
+    css: [theme_inferno_black.css]
 site: distill::distill_website
 #favicon: transparency.svg
 ---
@@ -12,19 +12,81 @@ site: distill::distill_website
 ```{r, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE}
 
 knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(janitor)
+library(gt)
+library(gtExtras)
+library(knitr)
 
 ```
   
-### Inventory      
-
-
 ### Orders      
 
+```{r}
 
- <br>
+order_dat <- read_csv("order_data/order_update.csv.gz")
 
- <br>
+order_dat |> 
+  rename(product = product_description) |> 
+  gt() |> 
+  gtExtras::gt_theme_538() |> 
+  gt::sub_missing() |> 
+  gt::opt_interactive(
+    use_filters = TRUE,
+    use_compact_mode = TRUE,
+    use_text_wrapping = TRUE
+  )
 
- <br>
+```
+
+
+### Inventory      
+
+#### Supplies  
+
+```{r}
+
+inventory_dat <- read_csv("order_data/inventory_update.csv.gz")
+
+inventory_dat |> 
+  rename(product = product_description) |> 
+  gt() |> 
+  gtExtras::gt_theme_538() |> 
+  gt::sub_missing() |> 
+  gt::opt_interactive(
+    use_filters = TRUE,
+    use_compact_mode = TRUE,
+    use_text_wrapping = TRUE
+  )
+
+```
+
+
+#### Equipment  
+
+```{r}
+
+equipment_dat <- read_csv("order_data/equipment_update.csv.gz")
+
+equipment_dat |> 
+  #rename(product = product_description) |> 
+  gt() |> 
+  gtExtras::gt_theme_538() |> 
+  gt::sub_missing() |> 
+  # gt::opt_interactive(
+  #   use_filters = TRUE,
+  #   use_compact_mode = TRUE,
+  #   use_text_wrapping = TRUE
+  # ) |> 
+  identity()
+
+```
+
+
+<br>
+
+<br>
+
+<br>
 
   
