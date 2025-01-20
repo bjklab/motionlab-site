@@ -9,7 +9,7 @@ site: distill::distill_website
 #favicon: transparency.svg
 ---
 
-```{r, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE}
+```{r, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, layout='l-page'}
 
 knitr::opts_chunk$set(echo = FALSE)
 
@@ -23,13 +23,13 @@ The following guide is derived from [a Posit guide to installing R from source](
 
 - Add dependencies (build-essential, cmake, blas, Fortran, lapack, bzip2, readline, cairo, pandoc, git and other libraries):  
 
-```{bash, echo = TRUE, eval=FALSE}
+```{bash, echo = TRUE, eval=FALSE, layout='l-page'}
 sudo apt install build-essential cmake libblas-dev gfortran liblapack-dev bzip2 libbz2-dev libreadline-dev libcairo-dev pandoc git libgit2-dev
 ```
 
 - Prepare additional dependencies:  
 
-```{bash, echo = TRUE, eval=FALSE}
+```{bash, echo = TRUE, eval=FALSE, layout='l-page'}
 sudo sed -i.bak "/^#.*deb-src.*universe$/s/^# //g" /etc/apt/sources.list
 sudo apt update
 sudo apt build-dep r-base
@@ -37,13 +37,13 @@ sudo apt build-dep r-base
 
 - Set target R version:  
 
-```{bash, echo = TRUE, eval=FALSE}
+```{bash, echo = TRUE, eval=FALSE, layout='l-page'}
 export R_VERSION=4.4.1
 ```
 
 - Download R target: 
 
-```{bash, echo = TRUE, eval=FALSE}
+```{bash, echo = TRUE, eval=FALSE, layout='l-page'}
 curl -O https://cran.rstudio.com/src/base/R-4/R-${R_VERSION}.tar.gz
 tar -xzvf R-${R_VERSION}.tar.gz
 cd R-${R_VERSION}
@@ -51,7 +51,7 @@ cd R-${R_VERSION}
 
 - Build R: 
 
-```{bash, echo = TRUE, eval=FALSE}
+```{bash, echo = TRUE, eval=FALSE, layout='l-page'}
 ./configure \
   --prefix=/opt/R/${R_VERSION} \
   --enable-R-shlib \
@@ -65,7 +65,7 @@ sudo make install
 
 - Set R symlinks: 
 
-```{bash, echo = TRUE, eval=FALSE}
+```{bash, echo = TRUE, eval=FALSE, layout='l-page'}
 /opt/R/${R_VERSION}/bin/R --version
 
 sudo ln -s -f /opt/R/${R_VERSION}/bin/R /usr/local/bin/R
@@ -78,7 +78,7 @@ sudo ln -s -f /opt/R/${R_VERSION}/bin/Rscript /usr/local/bin/Rscript
 
 We recommend using the [pak](https://pak.r-lib.org/) package to manage R packages. It provides more explicit reporting of dependences:  
 
-```{R, echo = TRUE, eval=FALSE}
+```{R, echo = TRUE, eval=FALSE, layout='l-page'}
 install.packages('pak')
 pak::pkg_install('tidyverse')
 ```
