@@ -2281,7 +2281,7 @@ Papers
 
 
 <div class="d-article">
-<div class="layout-chunk" data-layout="l-body">
+<div class="layout-chunk" data-layout="l-page">
 
 </div>
 <h3 id="r">R</h3>
@@ -2290,13 +2290,13 @@ Papers
 <ul>
 <li>Add dependencies (build-essential, cmake, blas, Fortran, lapack, bzip2, readline, cairo, pandoc, git and other libraries):</li>
 </ul>
-<div class="layout-chunk" data-layout="l-body">
+<div class="layout-chunk" data-layout="l-page">
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> apt install build-essential cmake libblas-dev gfortran liblapack-dev bzip2 libbz2-dev libreadline-dev libcairo-dev pandoc git libgit2-dev</a></code></pre></div>
 </div>
 <ul>
 <li>Prepare additional dependencies:</li>
 </ul>
-<div class="layout-chunk" data-layout="l-body">
+<div class="layout-chunk" data-layout="l-page">
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">sudo</span> sed -i.bak <span class="st">&quot;/^#.*deb-src.*universe$/s/^# //g&quot;</span> /etc/apt/sources.list</a>
 <a class="sourceLine" id="cb2-2" title="2"><span class="fu">sudo</span> apt update</a>
 <a class="sourceLine" id="cb2-3" title="3"><span class="fu">sudo</span> apt build-dep r-base</a></code></pre></div>
@@ -2304,13 +2304,13 @@ Papers
 <ul>
 <li>Set target R version:</li>
 </ul>
-<div class="layout-chunk" data-layout="l-body">
+<div class="layout-chunk" data-layout="l-page">
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="bu">export</span> <span class="va">R_VERSION=</span>4.4.1</a></code></pre></div>
 </div>
 <ul>
 <li>Download R target:</li>
 </ul>
-<div class="layout-chunk" data-layout="l-body">
+<div class="layout-chunk" data-layout="l-page">
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="ex">curl</span> -O https://cran.rstudio.com/src/base/R-4/R-<span class="va">${R_VERSION}</span>.tar.gz</a>
 <a class="sourceLine" id="cb4-2" title="2"><span class="fu">tar</span> -xzvf R-<span class="va">${R_VERSION}</span>.tar.gz</a>
 <a class="sourceLine" id="cb4-3" title="3"><span class="bu">cd</span> R-<span class="va">${R_VERSION}</span></a></code></pre></div>
@@ -2318,7 +2318,7 @@ Papers
 <ul>
 <li>Build R:</li>
 </ul>
-<div class="layout-chunk" data-layout="l-body">
+<div class="layout-chunk" data-layout="l-page">
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="ex">./configure</span> \</a>
 <a class="sourceLine" id="cb5-2" title="2">  --prefix=/opt/R/<span class="va">${R_VERSION}</span> \</a>
 <a class="sourceLine" id="cb5-3" title="3">  --enable-R-shlib \</a>
@@ -2332,7 +2332,7 @@ Papers
 <ul>
 <li>Set R symlinks:</li>
 </ul>
-<div class="layout-chunk" data-layout="l-body">
+<div class="layout-chunk" data-layout="l-page">
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="ex">/opt/R/</span><span class="va">${R_VERSION}</span><span class="ex">/bin/R</span> --version</a>
 <a class="sourceLine" id="cb6-2" title="2"></a>
 <a class="sourceLine" id="cb6-3" title="3"><span class="fu">sudo</span> ln -s -f /opt/R/<span class="va">${R_VERSION}</span>/bin/R /usr/local/bin/R</a>
@@ -2341,7 +2341,7 @@ Papers
 <p><br></p>
 <h4 id="managing-r-packages">Managing R Packages</h4>
 <p>We recommend using the <a href="https://pak.r-lib.org/">pak</a> package to manage R packages. It provides more explicit reporting of dependences:</p>
-<div class="layout-chunk" data-layout="l-body">
+<div class="layout-chunk" data-layout="l-page">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages</a></span><span class='op'>(</span><span class='st'>'pak'</span><span class='op'>)</span></span>
 <span><span class='fu'>pak</span><span class='fu'>::</span><span class='fu'><a href='https://pak.r-lib.org/reference/pkg_install.html'>pkg_install</a></span><span class='op'>(</span><span class='st'>'tidyverse'</span><span class='op'>)</span></span></code></pre>
