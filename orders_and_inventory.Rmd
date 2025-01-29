@@ -28,6 +28,7 @@ order_dat <- read_csv("order_data/order_update.csv.gz")
 
 order_dat |> 
   rename(product = product_description) |> 
+  arrange(desc(order_date)) |> 
   gt() |> 
   gtExtras::gt_theme_538() |> 
   gt::sub_missing() |> 
