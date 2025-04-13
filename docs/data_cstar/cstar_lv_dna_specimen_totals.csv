@@ -1,10 +1,10 @@
 sample_type,original_sample_type,total_count,study,principal_investigator,study_count
-DNA,Bacterial,165,DAVID,David,42
-DNA,Bacterial,165,MIRA,Kelly,123
+DNA,Bacterial,178,DAVID,David,42
+DNA,Bacterial,178,MIRA,Kelly,136
 DNA,Environmental,3,MIRA,Kelly,3
 DNA,Rectal,21,UP,Kelly,21
-DNA,Sputum,1311,MIRA,Kelly,1270
-DNA,Sputum,1311,TRIP-AMR,Kelly,41
-DNA,Stool,979,C.diff,Kelly,596
-DNA,Stool,979,MIRA,Kelly,298
-DNA,Stool,979,ONC,Ziegler,85
+DNA,Sputum,1462,MIRA,Kelly,1421
+DNA,Sputum,1462,TRIP-AMR,Kelly,41
+DNA,Stool,1013,C.diff,Kelly,596
+DNA,Stool,1013,MIRA,Kelly,325
+DNA,Stool,1013,ONC,Ziegler,92
