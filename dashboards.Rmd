@@ -48,6 +48,12 @@ knitr::opts_chunk$set(echo = FALSE)
 </details>  
 
 
+<details>
+<summary style='font-size:1.2rem'> **Fecal microbiota transplantation to address colonization and environmental contamination with multidrug-resistant organisms (FACE-MDRO) (CDC U54-CK000610): University of Pennsylvania Site** <a href="project_reports/facemdro_screening_report.html" target="_blank">Dashboard ↗</a> </summary>
+
+<iframe src="project_reports/facemdro_screening_report_pennsite.html" width=800 height=550 style="border: 0; box-shadow: 5px 5px 56px 0px rgba(0,0,0,0.25);"></iframe>
+  
+</details>  
 
 
  <br>
