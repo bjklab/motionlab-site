@@ -13,10 +13,12 @@ set.seed(16)
 #' #####################################
 read_lines("pubs/doi.txt") |> 
   enframe(value = "doi") |> 
+  distinct() |> # ensure no duplicate searches
   select(doi) |> 
   mutate(url = paste0("https://doi.org/", doi)) |> 
   mutate(curl_query = paste0("curl -LH 'Accept: application/x-bibtex' ", url)) |> 
   mutate(bib = map(.x = curl_query, .f = ~ system(.x, intern = TRUE))) |> 
+  mutate(bib = map_chr(.x = bib, .f = ~ paste(.x, collapse = " "))) |> 
   identity() -> doi_tib
 doi_tib
 
@@ -25,6 +27,7 @@ doi_tib$bib[[2]]
 doi_tib |> 
   filter(grepl("not found", tolower(bib)) == FALSE) |>   
   pull(bib) |> 
+  sort() |> # alphabetize by article index
   paste0(collapse = "\n \n") |> 
   write_lines(file = "pubs/doi.bib")
 
