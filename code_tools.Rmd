@@ -42,7 +42,7 @@ sudo apt build-dep r-base
 - Set target R version:  
 
 ```{bash, echo = TRUE, eval=FALSE, layout='l-page'}
-export R_VERSION=4.4.1
+export R_VERSION=4.5.1
 ```
 
 - Download R target: 
