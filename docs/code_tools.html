@@ -23,6 +23,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
@@ -2293,56 +2294,56 @@ Papers
 <li>Add dependencies (build-essential, cmake, blas, Fortran, lapack, bzip2, readline, cairo, pandoc, git and other libraries):</li>
 </ul>
 <div class="layout-chunk" data-layout="l-page">
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">sudo</span> apt install build-essential cmake libblas-dev <span class="kw">\</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>  <span class="ex">gfortran</span> liblapack-dev bzip2 libbz2-dev libreadline-dev <span class="kw">\</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>  <span class="ex">libcairo-dev</span> pandoc git libgit2-dev libxt-dev liblzma-dev <span class="kw">\</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>  <span class="ex">libcurl4-openssl-dev</span> chromium texinfo texlive texlive-fonts-extra <span class="kw">\</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>  <span class="ex">libtiff-dev</span> libjpeg-dev</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install build-essential cmake libblas-dev <span class="dt">\</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  gfortran liblapack-dev bzip2 libbz2-dev libreadline-dev <span class="dt">\</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  libcairo-dev pandoc git libgit2-dev libxt-dev liblzma-dev <span class="dt">\</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  libcurl4-openssl-dev chromium texinfo texlive texlive-fonts-extra <span class="dt">\</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  libtiff-dev libjpeg-dev</span></code></pre></div>
 </div>
 <ul>
 <li>Prepare additional dependencies:</li>
 </ul>
 <div class="layout-chunk" data-layout="l-page">
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="fu">sudo</span> sed -i.bak <span class="st">&quot;/^#.*deb-src.*universe$/s/^# //g&quot;</span> /etc/apt/sources.list</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a><span class="fu">sudo</span> apt update</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a><span class="fu">sudo</span> apt build-dep r-base</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> sed <span class="at">-i.bak</span> <span class="st">&quot;/^#.*deb-src.*universe$/s/^# //g&quot;</span> /etc/apt/sources.list</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt build-dep r-base</span></code></pre></div>
 </div>
 <ul>
 <li>Set target R version:</li>
 </ul>
 <div class="layout-chunk" data-layout="l-page">
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="bu">export</span> <span class="va">R_VERSION=</span>4.5.1</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">R_VERSION</span><span class="op">=</span>4.5.1</span></code></pre></div>
 </div>
 <ul>
 <li>Download R target:</li>
 </ul>
 <div class="layout-chunk" data-layout="l-page">
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="ex">curl</span> -O https://cran.rstudio.com/src/base/R-4/R-<span class="va">${R_VERSION}</span>.tar.gz</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a><span class="fu">tar</span> -xzvf R-<span class="va">${R_VERSION}</span>.tar.gz</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a><span class="bu">cd</span> R-<span class="va">${R_VERSION}</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-O</span> https://cran.rstudio.com/src/base/R-4/R-<span class="va">${R_VERSION}</span>.tar.gz</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-xzvf</span> R-<span class="va">${R_VERSION}</span>.tar.gz</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> R-<span class="va">${R_VERSION}</span></span></code></pre></div>
 </div>
 <ul>
 <li>Build R:</li>
 </ul>
 <div class="layout-chunk" data-layout="l-page">
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="ex">./configure</span> <span class="kw">\</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a>  <span class="ex">--prefix</span>=/opt/R/<span class="va">${R_VERSION}</span> <span class="kw">\</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a>  <span class="ex">--enable-R-shlib</span> <span class="kw">\</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a>  <span class="ex">--enable-memory-profiling</span> <span class="kw">\</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a>  <span class="ex">--with-blas</span> <span class="kw">\</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a>  <span class="ex">--with-lapack</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true"></a><span class="fu">make</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true"></a><span class="fu">sudo</span> make install</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./configure</span> <span class="dt">\</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">--prefix</span><span class="op">=</span>/opt/R/<span class="va">${R_VERSION}</span> <span class="dt">\</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">--enable-R-shlib</span> <span class="dt">\</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">--enable-memory-profiling</span> <span class="dt">\</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">--with-blas</span> <span class="dt">\</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">--with-lapack</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> make install</span></code></pre></div>
 </div>
 <ul>
 <li>Set R symlinks:</li>
 </ul>
 <div class="layout-chunk" data-layout="l-page">
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="ex">/opt/R/</span><span class="va">${R_VERSION}</span><span class="ex">/bin/R</span> --version</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a><span class="fu">sudo</span> ln -s -f /opt/R/<span class="va">${R_VERSION}</span>/bin/R /usr/local/bin/R</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a><span class="fu">sudo</span> ln -s -f /opt/R/<span class="va">${R_VERSION}</span>/bin/Rscript /usr/local/bin/Rscript</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/opt/R/</span><span class="va">${R_VERSION}</span><span class="ex">/bin/R</span> <span class="at">--version</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> ln <span class="at">-s</span> <span class="at">-f</span> /opt/R/<span class="va">${R_VERSION}</span>/bin/R /usr/local/bin/R</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> ln <span class="at">-s</span> <span class="at">-f</span> /opt/R/<span class="va">${R_VERSION}</span>/bin/Rscript /usr/local/bin/Rscript</span></code></pre></div>
 </div>
 <p><br></p>
 <h4 id="managing-r-packages">Managing R Packages</h4>
