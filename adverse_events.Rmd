@@ -1,0 +1,53 @@
+---
+title: "Adverse Events"
+site: distill::distill_website
+#favicon: transparency.svg
+---
+  
+### CT-CAE v5.0  
+  
+```{r ctcae5, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, layout="l-body-outset"}
+
+#' #################################
+#' load libraries and set seed
+#' #################################
+library(tidyverse)
+#library(readxl)
+library(gt)
+library(gtExtras)
+
+
+#' #################################
+#'  read and format meeting data
+#' #################################
+
+# readxl::read_excel("ctcae/CTCAE_v5_0.xlsx") %>%
+#   identity() -> ctcae
+# ctcae
+
+# ctcae |> 
+#   write_csv("ctcae/CTCAE_v5_0.csv")
+
+read_csv("ctcae/CTCAE_v5_0.csv") %>%
+  identity() -> ctcae
+#ctcae
+
+ctcae |> 
+  #rename(product = product_description) |> 
+  #arrange(desc(order_date)) |> 
+  gt() |> 
+  gtExtras::gt_theme_538() |> 
+  gt::sub_missing() |> 
+  gt::opt_interactive(
+    use_filters = TRUE,
+    use_compact_mode = TRUE,
+    use_text_wrapping = TRUE
+  )
+
+
+
+
+```
+  
+<br>    
+  

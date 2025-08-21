@@ -19,6 +19,8 @@ navbar:
       href: motion_team.html
     - text: "Resources"
       menu: 
+        - text: "Adverse Events"
+          href: adverse_events.html
         - text: "Chalkboard ↗"
           href: https://bjklab.github.io/chalkboard-quarto/chalkboard.html
         - text: "Code Library ↗"
