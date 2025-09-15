@@ -1,0 +1,34 @@
+---
+title: "LIMS Report Notes"
+site: distill::distill_website
+#favicon: transparency.svg
+---
+ 
+### LIMS Reports    
+  
+```{r upcoming_meetings, eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, layout="l-body-outset"}
+
+#' #################################
+#' load libraries and set seed
+#' #################################
+library(tidyverse)
+library(gt)
+library(gtExtras)
+
+
+#' #################################
+#'  read and format meeting data
+#' #################################
+
+lims_notes <- read_csv("discussion_topics/lims_notes.csv")
+
+lims_notes |> 
+  gt() |> 
+  gt::sub_missing() |> 
+  gtExtras::gt_theme_538()
+
+
+```
+  
+<br>    
+  

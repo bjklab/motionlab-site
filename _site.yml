@@ -33,6 +33,8 @@ navbar:
           href: onboarding.html
         - text: "LIMS Link ↗"
           href: https://lims.pmacs.upenn.edu/limsprod
+        - text: "LIMS Report Notes"
+          href: lims_notes.html
         - text: "Meeting Agenda"
           href: discussion_topics.html
         - text: "Meeting Schedule"
