@@ -60,7 +60,10 @@ motion_people |>
   mutate(your_pronouns = tolower(your_pronouns)) |> 
   mutate(your_pronouns = ifelse(is.na(your_pronouns), "", glue::glue("({your_pronouns})"))) |> #count(your_pronouns)
   mutate(your_middle_initial = ifelse(is.na(your_middle_initial), NA, paste0(gsub("\\.","",your_middle_initial),"."))) |> 
-  mutate(your_website = ifelse(is.na(your_website), NA, glue("Additional information can be found <a href='https://{your_website}'>here</a>."))) |> 
+  mutate(your_website = case_when(is.na(your_website) ~ NA, grepl("http",your_website) == FALSE ~ paste0("https://",your_website), .default = your_website)) |>
+  #count(your_website) 
+  mutate(your_website = ifelse(is.na(your_website), NA, glue("Additional information can be found <a href='{your_website}'>here</a>."))) |> 
+  #count(your_website)
   mutate(biography = glue("<b>{your_first_name} {your_middle_initial} {your_last_name}, {your_credentials}</b> {your_pronouns} is {your_title} at the University of Pennsylvania. {your_work_background} {your_focus} {your_interests} {your_website}", .na = "")) |>
   mutate(headshot_path = paste0("./people/headshots/",your_photo)) |> 
   mutate(headshot_path_webp = gsub(pattern = "jpg|jpeg|png|PNG|jpeg|JPG","webp",headshot_path)) |> 
