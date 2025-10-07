@@ -32,11 +32,27 @@ read_csv("ctcae/CTCAE_v5_0.csv") %>%
   identity() -> ctcae
 #ctcae
 
+read_csv("ctcae/Form_Response_Report_CTCAE.csv") |> 
+  count(TOXICITY1T) |> 
+  rename(`CTCAE Term` = TOXICITY1T) |> 
+  identity() -> observed_aes
+#observed_aes
+
 ctcae |> 
+  left_join(observed_aes, by = "CTCAE Term") |> 
+  replace_na(replace = list("n" = 0)) |> 
+  #count(n)
   #rename(product = product_description) |> 
   #arrange(desc(order_date)) |> 
-  gt() |> 
+  gt(id = 'CTCAE v5.0') |> 
   gtExtras::gt_theme_538() |> 
+  data_color(
+        columns = n, # Column to base the color on
+        target_columns = everything(), # Apply color to all columns in the row
+        palette = c("white","purple") # Example palette
+  ) |> 
+  #gtExtras::gt_hulk_col_numeric(n) |> 
+  gt::cols_hide(n) |> 
   gt::sub_missing() |> 
   gt::opt_interactive(
     use_filters = TRUE,
