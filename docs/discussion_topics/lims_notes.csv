@@ -1,6 +1,7 @@
 ﻿Labvantage Report,Target,Notes
-IDSampleByStudy,bulk download of all parent and child specimens for a study,issue with duplication due to propogation of microbial species element
-IDSampleReport,bulk download of single specimens type for a single study,issue with duplication due to propogation of microbial species element
+IDSampleByStudy,bulk download of all parent and child specimens for a study,all specimen types
+IDSampleReport,bulk download of single specimens type for a single study,must select specimen type
 IDICEMANReport,aggregating culture data for ICEMAN (or other projects with emphasis on culture results),
 ID_FACEMDRO,aggregating culture data for FACE-MDRO (or other projects with emphasis on culture results),
 VSPSampleReport,Bushman lab collaboration for SCV2 biobanking,location contingent on transfer between labs
+
