@@ -4,7 +4,7 @@ site: distill::distill_website
 #favicon: transparency.svg
 ---
 
-WIP meetings are held 4pm on Tuesdays, in Blockley 701. Assay development meetings are held 4pm on Tuesdays, in Johnson Pavilion 501.  
+WIP meetings are held 4pm on Tuesdays, in Blockley 701. Assay development meetings are held 4pm on Tuesdays, in Johnson 501.  
   
 ### Upcoming Meetings  
   
