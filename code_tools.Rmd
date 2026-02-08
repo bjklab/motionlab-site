@@ -60,8 +60,10 @@ cd R-${R_VERSION}
   --prefix=/opt/R/${R_VERSION} \
   --enable-R-shlib \
   --enable-memory-profiling \
+  --enable-html-help \
   --with-blas \
-  --with-lapack
+  --with-lapack \
+  --with-tcltk
 
 make
 sudo make install
