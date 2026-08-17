@@ -15,7 +15,10 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```
 
+### REBEL: Quantifying respiratory and gut bacterial strain persistence to predict pneumonia treatment failure (R01 AI202932)  
+Hospital-acquired pneumonia (HAP) and ventilator-associated pneumonia (VAP) are bacterial infections of the respiratory tract that occur during hospitalization. HAP and VAP are hard to treat: even when the bacterium causing HAP or VAP is recognized, antibiotic treatment for HAP and VAP often fails, resulting in a prolonged hospital stay, critical illness, or even death. We are studying human subjects with HAP or VAP to improve how we quantify the respiratory bacterial response to antibiotics, so that we can better understand how antibiotic failure occurs, better tailor antibiotic duration to optimize treatment response, and achieve HAP and VAP cures.  
 
+  
 ### mVACS: mRNA Vaccines for _C. difficile_ Suppression - Human Subjects Core (U19 AI174998 - Core C)    
   
 We are contributing to a collaborative center with multidisciplinary scientists working to develop mRNA vaccine candidates to address the threat posed by recurrent _C. difficile_ infection. The human subjects core is focused on developing a clinical biorepository and prospective cohort to identify populations in whom vaccination strategies against _C. difficile_ will be most beneficial. Biorepository progress report <a href="biorepo_reports/biorepository_report_mVACS.html" target="_blank">here</a>.   
