@@ -43,6 +43,8 @@ navbar:
           href: https://www.med.upenn.edu/microbiocode/
         - text: "Orders & Inventory"
           href: orders_and_inventory.html
+        - text: "OA Agreements ↗"
+          href: https://guides.library.upenn.edu/penn-oa-agreements
         - text: "Protocol Library"
           href: protocols.html
         - text: "Timer ↗"
